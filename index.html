@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Jevandry</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316', // Orange-500
+                        primaryDark: '#ea580c', // Orange-600
+                        dark: '#1a202c',
+                        light: '#ffffff',
+                        offWhite: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Tambahan untuk efek gradasi pada foto */
+        .photo-gradient-mask {
+            /* Membuat efek gradasi transparan di bagian bawah foto */
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+        
+        /* Animasi fade in simpel */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-3xl font-bold text-dark tracking-tighter">
+                        Jevandry<span class="text-primary">.</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-primary transition font-medium">Home</a>
+                    <a href="#pengalaman" class="hover:text-primary transition font-medium">Pengalaman</a>
+                    <a href="#achievement" class="hover:text-primary transition font-medium">Achievement</a>
+                    <a href="#sertifikasi" class="hover:text-primary transition font-medium">Sertifikasi</a>
+                    <a href="#publikasi" class="hover:text-primary transition font-medium">Publikasi</a>
+                    <a href="#kontak" class="bg-primary text-white px-5 py-2 rounded-full hover:bg-primaryDark transition font-medium shadow-lg shadow-orange-500/30">Kontak</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-50 hover:text-primary">Home</a>
+                <a href="#pengalaman" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-50 hover:text-primary">Pengalaman</a>
+                <a href="#achievement" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-50 hover:text-primary">Achievement</a>
+                <a href="#sertifikasi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-50 hover:text-primary">Sertifikasi</a>
+                <a href="#publikasi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-50 hover:text-primary">Publikasi</a>
+                <a href="#kontak" class="block px-3 py-2 rounded-md text-base font-medium text-primary font-bold">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+            
+            <div class="w-full md:w-1/2 text-center md:text-left fade-in">
+                <div class="inline-block px-4 py-1.5 mb-4 text-sm font-semibold tracking-wider text-primary uppercase bg-orange-100 rounded-full">
+                    Mahasiswa Teknik Elektro & Content Creator
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6">
+                    Halo, Saya <br><span class="text-primary">Jevandry.</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Saya adalah seorang mahasiswa S1 Teknik Elektro di <b>Institut Teknologi PLN</b> dengan pengalaman di bidang pemrograman, digital marketing dan bisnis kreatif 3D Printing. Memiliki minat pada pengembangan teknologi, strategi pemasaran digital serta membangun brand melalui konten dan produk inovatif.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#" class="px-8 py-3.5 bg-primary text-white font-bold rounded-lg shadow-lg shadow-orange-500/40 hover:bg-primaryDark transition transform hover:-translate-y-1">
+                        <i class="fas fa-download mr-2"></i> Download CV
+                    </a>
+                    <a href="#kontak" class="px-8 py-3.5 border-2 border-gray-300 text-dark font-bold rounded-lg hover:border-primary hover:text-primary transition">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 flex justify-center relative">
+                <div class="absolute w-72 h-72 bg-orange-200 rounded-full blur-3xl opacity-50 -z-10 top-10"></div>
+                
+                <div class="relative w-80 h-[28rem] md:w-96 md:h-[32rem]">
+                   <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" 
+                        alt="Foto Profil Jevandry" 
+                        class="w-full h-full object-cover object-top rounded-t-full photo-gradient-mask shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pengalaman" class="py-20 bg-offWhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark">Pengalaman</h2>
+                <div class="w
