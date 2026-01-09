@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&family=Fira+Code&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -18,6 +18,7 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Poppins', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
                     },
                     colors: {
                         primary: '#f97316', // Vibrant Orange
@@ -27,10 +28,14 @@
                         light: '#ffffff',
                         surface: '#f8fafc',
                     },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(249, 115, 22, 0.6)',
+                    },
                     animation: {
                         'float-slow': 'float 6s ease-in-out infinite',
                         'float-medium': 'float 5s ease-in-out infinite 1s',
                         'float-fast': 'float 4s ease-in-out infinite 2s',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         float: {
@@ -53,13 +58,30 @@
         /* --- ANIMASI SCROLL REVEAL --- */
         .reveal {
             opacity: 0;
-            transform: translateY(50px); /* Mulai dari posisi lebih bawah */
-            transition: all 1s ease-out; /* Durasi transisi */
+            transform: translateY(50px);
+            transition: all 1s ease-out;
         }
         
         .reveal.active {
             opacity: 1;
-            transform: translateY(0); /* Kembali ke posisi asal */
+            transform: translateY(0);
+        }
+
+        /* Micro Interaction Classes */
+        .social-icon-hover {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .social-icon-hover:hover {
+            transform: scale(1.15) translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.4);
+        }
+
+        .menu-link-hover {
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .menu-link-hover:hover {
+            transform: translateX(5px);
+            color: #f97316; /* Primary Color */
         }
     </style>
 </head>
@@ -69,7 +91,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <div class="flex-shrink-0">
-                    <a href="#home" class="font-heading text-2xl font-bold text-dark tracking-tighter">
+                    <a href="#home" class="font-heading text-2xl font-bold text-dark tracking-tighter hover:text-primary transition duration-300">
                         Jevandry<span class="text-primary text-4xl leading-none">.</span>
                     </a>
                 </div>
@@ -86,7 +108,7 @@
                 </div>
 
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2 transition-transform active:scale-95">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -123,10 +145,10 @@
                 </p>
                 
                 <div class="flex flex-wrap gap-4 mb-16">
-                    <a href="#contact" class="px-8 py-4 bg-primary text-white font-bold rounded-full shadow-lg shadow-orange-500/30 hover:bg-primaryHover transition transform hover:-translate-y-1">
+                    <a href="#contact" class="px-8 py-4 bg-primary text-white font-bold rounded-full shadow-lg shadow-orange-500/30 hover:bg-primaryHover transition transform hover:-translate-y-1 hover:shadow-glow">
                         Let's Talk
                     </a>
-                    <a href="#" class="px-8 py-4 border border-gray-300 text-dark font-bold rounded-full hover:border-dark transition bg-transparent">
+                    <a href="#" class="px-8 py-4 border border-gray-300 text-dark font-bold rounded-full hover:border-dark transition bg-transparent hover:bg-gray-50">
                         Download CV
                     </a>
                 </div>
@@ -196,8 +218,8 @@
             </div>
             
             <div class="space-y-12 border-l-2 border-gray-100 ml-3 md:ml-6 pl-8 md:pl-10 relative">
-                <div class="relative">
-                    <span class="absolute -left-[41px] md:-left-[49px] top-1 h-5 w-5 rounded-full border-4 border-white bg-primary"></span>
+                <div class="relative group">
+                    <span class="absolute -left-[41px] md:-left-[49px] top-1 h-5 w-5 rounded-full border-4 border-white bg-primary group-hover:scale-125 transition-transform duration-300"></span>
                     <h4 class="text-xl font-bold text-dark">Laboratory Assistant</h4>
                     <p class="text-gray-700 font-medium mt-1">Laboratorium Algoritma & Pemrograman Institut Teknologi PLN · Paruh Waktu</p>
                     <p class="text-sm text-gray-500 mt-1 mb-4">Mei 2025 - Saat ini · 9 bln | Jakarta Barat</p>
@@ -208,8 +230,8 @@
                     </ul>
                 </div>
 
-                <div class="relative">
-                     <span class="absolute -left-[41px] md:-left-[49px] top-1 h-5 w-5 rounded-full border-4 border-white bg-dark"></span>
+                <div class="relative group">
+                     <span class="absolute -left-[41px] md:-left-[49px] top-1 h-5 w-5 rounded-full border-4 border-white bg-dark group-hover:bg-primary transition-colors duration-300"></span>
                      <h4 class="text-xl font-bold text-dark">Digital Marketing Specialist</h4>
                      <p class="text-gray-700 font-medium mt-1">Nama Perusahaan (Placeholder)</p>
                      <p class="text-sm text-gray-500 mt-1 mb-6">Total Durasi: 1 thn 3 bln</p>
@@ -234,8 +256,8 @@
                      </div>
                 </div>
 
-                <div class="relative">
-                    <span class="absolute -left-[41px] md:-left-[49px] top-1 h-5 w-5 rounded-full border-4 border-white bg-dark"></span>
+                <div class="relative group">
+                    <span class="absolute -left-[41px] md:-left-[49px] top-1 h-5 w-5 rounded-full border-4 border-white bg-dark group-hover:bg-primary transition-colors duration-300"></span>
                     <h4 class="text-xl font-bold text-dark">Co-Founder & Manager Operasional</h4>
                     <p class="text-gray-700 font-medium mt-1">ICHIPACHI · Purnawaktu</p>
                     <p class="text-sm text-gray-500 mt-1 mb-4">Des 2021 - Jul 2023 · 1 thn 8 bln | Kota Tangerang</p>
@@ -259,21 +281,21 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition hover:-translate-y-1">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition hover:-translate-y-1 cursor-default">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-medal text-2xl text-yellow-500"></i>
                         <h4 class="font-bold text-lg text-dark">Lomba Nasional IoT</h4>
                     </div>
                     <p class="text-gray-600 text-sm">Deskripsi singkat mengenai pencapaian atau juara yang diraih.</p>
                 </div>
-                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition hover:-translate-y-1">
+                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition hover:-translate-y-1 cursor-default">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-medal text-2xl text-gray-400"></i>
                         <h4 class="font-bold text-lg text-dark">Finalis Business Plan</h4>
                     </div>
                     <p class="text-gray-600 text-sm">Deskripsi singkat mengenai pencapaian atau juara yang diraih.</p>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
@@ -288,11 +310,11 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 transition cursor-default bg-surface">
+                <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 hover:shadow-md transition cursor-default bg-surface">
                     <h4 class="font-bold text-dark">Nama Sertifikasi</h4>
                     <p class="text-xs text-gray-500 mt-1">Penerbit • 2024</p>
                 </div>
-                <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 transition cursor-default bg-surface">
+                <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 hover:shadow-md transition cursor-default bg-surface">
                     <h4 class="font-bold text-dark">Nama Sertifikasi Lain</h4>
                     <p class="text-xs text-gray-500 mt-1">Penerbit • 2023</p>
                 </div>
@@ -310,7 +332,7 @@
                 <p class="text-gray-500 mt-2">Karya tulis ilmiah dan jurnal yang telah dipublikasikan.</p>
             </div>
 
-            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-md border border-gray-100">
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-md border border-gray-100 hover:shadow-xl transition duration-500">
                 <div class="flex flex-col gap-3">
                     <h4 class="font-heading font-bold text-dark text-xl leading-snug hover:text-primary transition">
                         <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank">
@@ -339,7 +361,7 @@
                     </div>
                     
                     <div class="mt-6">
-                        <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank" class="inline-flex items-center text-sm font-semibold text-white bg-dark hover:bg-primary transition px-5 py-3 rounded-full shadow-lg shadow-gray-200">
+                        <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank" class="inline-flex items-center text-sm font-semibold text-white bg-dark hover:bg-primary transition px-5 py-3 rounded-full shadow-lg shadow-gray-200 hover:-translate-y-1">
                             <i class="fas fa-external-link-alt mr-2"></i> Buka di ResearchGate
                         </a>
                     </div>
@@ -361,8 +383,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group bg-surface rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
                     <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                         <i class="fas fa-home text-5xl text-gray-400"></i>
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                         <i class="fas fa-home text-5xl text-gray-400 group-hover:scale-110 transition duration-500"></i>
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Smart Home IoT System</h4>
@@ -375,7 +397,7 @@
 
                 <div class="group bg-surface rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
                     <div class="h-48 bg-gray-200 flex items-center justify-center">
-                         <i class="fas fa-code text-5xl text-gray-400"></i>
+                         <i class="fas fa-code text-5xl text-gray-400 group-hover:scale-110 transition duration-500"></i>
                     </div>
                     <div class="p-6">
                         <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Coming Soon</h4>
@@ -389,52 +411,86 @@
     <footer id="contact" class="bg-darker text-gray-400 pt-20 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                
                 <div>
-                    <a href="#" class="text-2xl font-bold text-white tracking-tight mb-4 block">
+                    <a href="#" class="text-2xl font-bold text-white tracking-tight mb-4 block hover:text-primary transition duration-300">
                         Jevandry<span class="text-primary">.</span>
                     </a>
                     <p class="text-sm leading-relaxed mb-6">
                         Mahasiswa Teknik Elektro dengan passion di pengembangan teknologi, digital marketing, dan inovasi kreatif.
                     </p>
+                    
+                    <div class="flex items-center gap-3 text-sm text-gray-400 mt-4 border-t border-gray-800 pt-4 w-fit">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-primary"></i> 
+                            <span>Indonesia 🇮🇩</span>
+                        </div>
+                        <span class="text-gray-700">|</span>
+                        <div class="flex items-center gap-2">
+                            <span class="relative flex h-2.5 w-2.5">
+                              <span class="animate-pulse-slow absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                            </span>
+                            <span class="text-gray-300 font-medium">Remote Work</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-6">Menu</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#about" class="hover:text-primary transition">About Me</a></li>
-                        <li><a href="#experience" class="hover:text-primary transition">Experience</a></li>
-                        <li><a href="#projects" class="hover:text-primary transition">Projects</a></li>
-                        <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
+                        <li><a href="#about" class="block menu-link-hover">About Me</a></li>
+                        <li><a href="#experience" class="block menu-link-hover">Experience</a></li>
+                        <li><a href="#projects" class="block menu-link-hover">Projects</a></li>
+                        <li><a href="#contact" class="block menu-link-hover">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-bold mb-6">Connect</h4>
-                    <p class="text-sm mb-4">Hubungi saya melalui media sosial di bawah ini:</p>
+                    <p class="text-sm mb-4">Temukan saya di platform berikut:</p>
+                    
                     <div class="flex space-x-3 mb-6">
-                        <a href="https://linkedin.com/in/jevandry-lou" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
+                        <a href="https://linkedin.com/in/jevandry-lou" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-white social-icon-hover" title="LinkedIn">
                             <i class="fab fa-linkedin-in text-lg"></i>
                         </a>
-                        <a href="https://github.com/" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
+                        <a href="https://github.com/" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-white social-icon-hover" title="GitHub">
                             <i class="fab fa-github text-lg"></i>
                         </a>
-                        <a href="https://instagram.com/kojep.pwma" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
+                        <a href="https://instagram.com/kojep.pwma" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-white social-icon-hover" title="Instagram">
                             <i class="fab fa-instagram text-lg"></i>
                         </a>
-                        <a href="mailto:kojepcs@gmail.com" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
-                            <i class="fas fa-envelope text-lg"></i>
-                        </a>
-                         <a href="https://wa.me/6287888622269" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition">
+                        <a href="https://wa.me/6287888622269" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:bg-green-600 hover:text-white hover:shadow-[0_0_15px_rgba(34,197,94,0.5)]" title="WhatsApp">
                             <i class="fab fa-whatsapp text-lg"></i>
                         </a>
+                    </div>
+
+                    <div class="mt-6">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Email Address</p>
+                        <div class="flex items-center gap-2 group cursor-pointer">
+                            <i class="fas fa-envelope text-primary text-sm"></i>
+                            <span class="font-mono text-sm text-gray-300 select-all group-hover:text-white transition">kojepcs@gmail.com</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
-                <p>&copy; 2026 Jevandry. All rights reserved.</p>
-                <a href="#" class="mt-4 md:mt-0 flex items-center gap-2 hover:text-primary transition">
-                    Back to Top <i class="fas fa-arrow-up"></i>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm gap-4">
+                <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+                    <p>&copy; 2026 Jevandry. All rights reserved.</p>
+                    
+                    <div class="flex items-center gap-3 text-xs tracking-wide">
+                        <span class="text-gray-600">Language:</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-primary font-bold cursor-pointer border-b border-primary pb-0.5">ID</span>
+                            <span class="text-gray-700">|</span>
+                            <span class="text-gray-500 hover:text-white cursor-pointer transition">EN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="flex items-center gap-2 hover:text-primary transition-colors group">
+                    Back to Top <i class="fas fa-arrow-up group-hover:-translate-y-1 transition-transform"></i>
                 </a>
             </div>
         </div>
@@ -470,21 +526,17 @@
         }
 
         // 3. Scroll Reveal Animation
-        // Kita menggunakan Intersection Observer API untuk performa terbaik
         const reveals = document.querySelectorAll('.reveal');
 
         const revealOnScroll = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Tambahkan class 'active' saat elemen masuk viewport
                     entry.target.classList.add('active');
-                    // (Opsional) Stop observing setelah muncul agar tidak animasi ulang
-                    // observer.unobserve(entry.target); 
                 }
             });
         }, {
-            threshold: 0.15, // Elemen harus 15% terlihat baru animasi jalan
-            rootMargin: "0px 0px -50px 0px" // Offset sedikit dari bawah
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
         });
 
         reveals.forEach(element => {
