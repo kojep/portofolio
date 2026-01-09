@@ -44,16 +44,28 @@
     </script>
 
     <style>
-        /* CSS untuk Floating Pills (Chip melayang) */
+        /* CSS untuk Floating Pills */
         .glass-pill {
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* --- ANIMASI SCROLL REVEAL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px); /* Mulai dari posisi lebih bawah */
+            transition: all 1s ease-out; /* Durasi transisi */
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0); /* Kembali ke posisi asal */
         }
     </style>
 </head>
 <body class="font-sans text-dark bg-white antialiased">
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md transition-all duration-300 top-0">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md transition-all duration-300 top-0 border-b border-gray-100/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <div class="flex-shrink-0">
@@ -62,13 +74,14 @@
                     </a>
                 </div>
                 
-                <div class="hidden lg:flex space-x-10">
+                <div class="hidden lg:flex space-x-8 xl:space-x-10">
                     <a href="#home" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Home</a>
                     <a href="#about" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">About Me</a>
                     <a href="#experience" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Experience</a>
                     <a href="#achievement" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Achievement</a>
                     <a href="#certification" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Certification</a>
                     <a href="#publication" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Publication</a>
+                    <a href="#projects" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Projects</a>
                     <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Contact</a>
                 </div>
 
@@ -80,24 +93,25 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg h-screen overflow-y-auto pb-32">
             <div class="px-4 pt-2 pb-6 space-y-1">
                 <a href="#home" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Home</a>
                 <a href="#about" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">About Me</a>
                 <a href="#experience" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Experience</a>
+                <a href="#achievement" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Achievement</a>
+                <a href="#certification" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Certification</a>
                 <a href="#publication" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Publication</a>
+                <a href="#projects" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Projects</a>
                 <a href="#contact" class="block px-3 py-3 font-bold text-primary">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white">
-        
+    <section id="home" class="reveal relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-white">
         <div class="absolute top-1/4 right-0 w-[700px] h-[700px] bg-orange-200/50 rounded-full blur-[120px] -z-10 translate-x-1/4 translate-y-[-10%]"></div>
         <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-50/40 rounded-full blur-[100px] -z-10 -translate-x-1/4"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            
             <div class="w-full lg:w-1/2 z-10">
                 <p class="font-bold text-dark mb-4 tracking-wide uppercase text-sm">Portofolio Personal</p>
                 <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold text-dark leading-[1.1] mb-6">
@@ -135,7 +149,6 @@
 
             <div class="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
                 <div class="relative w-[350px] md:w-[450px] z-10">
-                    
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" 
                          alt="Jevandry" 
                          class="w-full h-auto object-contain relative z-0">
@@ -160,13 +173,12 @@
                         </div>
                         <span class="font-bold text-dark text-sm">3D Printing</span>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-surface">
+    <section id="about" class="reveal py-24 bg-surface">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-3">Profile</h2>
             <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-8">About Me</h3>
@@ -176,15 +188,14 @@
         </div>
     </section>
 
-    <section id="experience" class="py-20 bg-white">
+    <section id="experience" class="reveal py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
+            <div class="mb-16 text-center md:text-left">
                 <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-2">Career Path</h2>
                 <h3 class="font-heading text-3xl font-bold text-dark">Professional Experience</h3>
             </div>
             
             <div class="space-y-12 border-l-2 border-gray-100 ml-3 md:ml-6 pl-8 md:pl-10 relative">
-                
                 <div class="relative">
                     <span class="absolute -left-[41px] md:-left-[49px] top-1 h-5 w-5 rounded-full border-4 border-white bg-primary"></span>
                     <h4 class="text-xl font-bold text-dark">Laboratory Assistant</h4>
@@ -202,6 +213,7 @@
                      <h4 class="text-xl font-bold text-dark">Digital Marketing Specialist</h4>
                      <p class="text-gray-700 font-medium mt-1">Nama Perusahaan (Placeholder)</p>
                      <p class="text-sm text-gray-500 mt-1 mb-6">Total Durasi: 1 thn 3 bln</p>
+                     
                      <div class="mb-8 relative pl-6 border-l border-gray-200">
                         <div class="absolute -left-[3px] top-2 h-1.5 w-1.5 rounded-full bg-gray-400"></div>
                         <h5 class="text-lg font-bold text-gray-800">Head of Digital Marketing</h5>
@@ -236,86 +248,138 @@
         </div>
     </section>
 
-    <section class="py-20 bg-surface">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                
-                <div id="achievement" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-primary text-xl">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-dark">Achievements</h3>
+    <section id="achievement" class="reveal py-24 bg-surface">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="w-12 h-12 bg-orange-100 rounded-lg inline-flex items-center justify-center text-primary text-xl mb-4 shadow-sm">
+                    <i class="fas fa-trophy"></i>
+                </span>
+                <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark">Achievements</h3>
+                <p class="text-gray-500 mt-2">Penghargaan dan pencapaian selama masa studi.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-medal text-2xl text-yellow-500"></i>
+                        <h4 class="font-bold text-lg text-dark">Lomba Nasional IoT</h4>
                     </div>
-                    <p class="text-gray-500 italic">Data achievement akan ditambahkan segera.</p>
+                    <p class="text-gray-600 text-sm">Deskripsi singkat mengenai pencapaian atau juara yang diraih.</p>
                 </div>
-
-                <div id="certification" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xl">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-dark">Certifications</h3>
+                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-medal text-2xl text-gray-400"></i>
+                        <h4 class="font-bold text-lg text-dark">Finalis Business Plan</h4>
                     </div>
-                    <p class="text-gray-500 italic">Data sertifikasi akan ditambahkan segera.</p>
+                    <p class="text-gray-600 text-sm">Deskripsi singkat mengenai pencapaian atau juara yang diraih.</p>
                 </div>
+                </div>
+        </div>
+    </section>
 
-                <div id="publication" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-dark">Publications</h3>
-                    </div>
-                    
-                    <div class="border-b border-gray-100 pb-2 mb-4 last:border-0 last:mb-0">
-                        <div class="flex flex-col gap-2">
-                            <h4 class="font-bold text-dark text-lg leading-snug hover:text-primary transition">
-                                <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank">
-                                    Penerapan Smart Grid dan Keberlanjutan untuk Efisiensi Energi Industri Otomotif di Patimban Berstandar GBC Indonesia
-                                </a>
-                            </h4>
-                            <span class="text-xs font-semibold text-primary bg-orange-50 w-fit px-2 py-1 rounded">Maret 2025</span>
-                        </div>
+    <section id="certification" class="reveal py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="w-12 h-12 bg-blue-100 rounded-lg inline-flex items-center justify-center text-blue-600 text-xl mb-4 shadow-sm">
+                    <i class="fas fa-certificate"></i>
+                </span>
+                <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark">Certifications</h3>
+                <p class="text-gray-500 mt-2">Sertifikasi profesional dan kompetensi teknis.</p>
+            </div>
 
-                        <div class="mt-3 text-sm text-gray-600 leading-relaxed">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 transition cursor-default bg-surface">
+                    <h4 class="font-bold text-dark">Nama Sertifikasi</h4>
+                    <p class="text-xs text-gray-500 mt-1">Penerbit • 2024</p>
+                </div>
+                <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 transition cursor-default bg-surface">
+                    <h4 class="font-bold text-dark">Nama Sertifikasi Lain</h4>
+                    <p class="text-xs text-gray-500 mt-1">Penerbit • 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publication" class="reveal py-24 bg-surface">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="w-12 h-12 bg-purple-100 rounded-lg inline-flex items-center justify-center text-purple-600 text-xl mb-4 shadow-sm">
+                    <i class="fas fa-newspaper"></i>
+                </span>
+                <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark">Publications</h3>
+                <p class="text-gray-500 mt-2">Karya tulis ilmiah dan jurnal yang telah dipublikasikan.</p>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-md border border-gray-100">
+                <div class="flex flex-col gap-3">
+                    <h4 class="font-heading font-bold text-dark text-xl leading-snug hover:text-primary transition">
+                        <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank">
+                            Penerapan Smart Grid dan Keberlanjutan untuk Efisiensi Energi Industri Otomotif di Patimban Berstandar GBC Indonesia
+                        </a>
+                    </h4>
+                    <span class="text-xs font-semibold text-primary bg-orange-50 w-fit px-3 py-1 rounded-full">Maret 2025</span>
+
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        <p class="mb-2">
+                            Beberapa waktu lalu, saya mengikuti sebuah lomba esai yang mengangkat isu energi dan teknologi industri. Kini, saya memutuskan untuk membagikan kembali tulisan tersebut agar bisa diakses secara lebih luas.
+                        </p>
+                        
+                        <div id="pub-desc-1" class="hidden space-y-2 mt-2 pt-2 border-t border-gray-100">
                             <p>
-                                Beberapa waktu lalu, saya mengikuti sebuah lomba esai yang mengangkat isu energi dan teknologi industri. Kini, saya memutuskan untuk membagikan kembali tulisan tersebut agar bisa diakses secara lebih luas.
+                                Esai ini membahas bagaimana teknologi Smart Grid menjadi kunci dalam mendukung efisiensi energi di kawasan industri otomotif Patimban, melalui integrasi manajemen beban listrik, energi terbarukan, hingga sistem pencahayaan alami.
                             </p>
-                            
-                            <div id="pub-desc-1" class="hidden mt-2 space-y-2">
-                                <p>
-                                    Esai ini membahas bagaimana teknologi Smart Grid menjadi kunci dalam mendukung efisiensi energi di kawasan industri otomotif Patimban, melalui integrasi manajemen beban listrik, energi terbarukan, hingga sistem pencahayaan alami.
-                                </p>
-                                <p>
-                                    Harapannya, tulisan ini bisa membuka diskusi tentang pentingnya transformasi energi cerdas di kawasan industri Indonesia.
-                                </p>
-                            </div>
-                            
-                            <button onclick="togglePub('pub-desc-1', this)" class="text-primary font-semibold text-xs mt-2 hover:underline focus:outline-none">
-                                Baca Selengkapnya
-                            </button>
+                            <p>
+                                Harapannya, tulisan ini bisa membuka diskusi tentang pentingnya transformasi energi cerdas di kawasan industri Indonesia.
+                            </p>
                         </div>
                         
-                        <div class="mt-4">
-                            <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank" class="inline-flex items-center text-sm font-semibold text-dark hover:text-primary transition bg-gray-50 px-3 py-2 rounded-lg">
-                                <i class="fas fa-external-link-alt mr-2"></i> Buka di ResearchGate
-                            </a>
-                        </div>
+                        <button onclick="togglePub('pub-desc-1', this)" class="text-primary font-bold text-sm mt-1 hover:text-primaryHover focus:outline-none flex items-center gap-1">
+                            Baca Selengkapnya <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank" class="inline-flex items-center text-sm font-semibold text-white bg-dark hover:bg-primary transition px-5 py-3 rounded-full shadow-lg shadow-gray-200">
+                            <i class="fas fa-external-link-alt mr-2"></i> Buka di ResearchGate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="w-12 h-12 bg-green-100 rounded-lg inline-flex items-center justify-center text-green-600 text-xl mb-4 shadow-sm">
+                    <i class="fas fa-laptop-code"></i>
+                </span>
+                <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark">Featured Projects</h3>
+                <p class="text-gray-500 mt-2">Beberapa proyek teknologi yang telah saya kerjakan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-surface rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                         <i class="fas fa-home text-5xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Smart Home IoT System</h4>
+                        <p class="text-sm text-gray-500 mt-2 mb-4">Sistem kendali rumah berbasis ESP32 yang terintegrasi dengan aplikasi mobile.</p>
+                        <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">
+                            View Project <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div id="projects" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xl">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3 class="font-heading text-xl font-bold text-dark">Projects</h3>
+                <div class="group bg-surface rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                         <i class="fas fa-code text-5xl text-gray-400"></i>
                     </div>
-                    <div class="border-b border-gray-100 pb-4 mb-4">
-                        <h4 class="font-bold text-dark">Smart Home IoT System</h4>
-                        <p class="text-sm text-gray-600 mt-1 mb-2">Sistem kendali rumah berbasis ESP32.</p>
-                        <a href="#" class="text-primary text-sm font-semibold hover:underline">View Project &rarr;</a>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Coming Soon</h4>
+                        <p class="text-sm text-gray-500 mt-2 mb-4">Proyek selanjutnya sedang dalam pengembangan.</p>
                     </div>
                 </div>
             </div>
@@ -324,7 +388,6 @@
 
     <footer id="contact" class="bg-darker text-gray-400 pt-20 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                 <div>
                     <a href="#" class="text-2xl font-bold text-white tracking-tight mb-4 block">
@@ -348,21 +411,20 @@
                 <div>
                     <h4 class="text-white font-bold mb-6">Connect</h4>
                     <p class="text-sm mb-4">Hubungi saya melalui media sosial di bawah ini:</p>
-                    
                     <div class="flex space-x-3 mb-6">
-                        <a href="https://linkedin.com/in/jevandry-lou" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="LinkedIn">
+                        <a href="https://linkedin.com/in/jevandry-lou" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
                             <i class="fab fa-linkedin-in text-lg"></i>
                         </a>
-                        <a href="https://github.com/" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="GitHub">
+                        <a href="https://github.com/" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
                             <i class="fab fa-github text-lg"></i>
                         </a>
-                        <a href="https://instagram.com/kojep.pwma" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="Instagram">
+                        <a href="https://instagram.com/kojep.pwma" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
                             <i class="fab fa-instagram text-lg"></i>
                         </a>
-                        <a href="mailto:kojepcs@gmail.com" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition" title="Email">
+                        <a href="mailto:kojepcs@gmail.com" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition">
                             <i class="fas fa-envelope text-lg"></i>
                         </a>
-                         <a href="https://wa.me/6287888622269" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition" title="WhatsApp">
+                         <a href="https://wa.me/6287888622269" target="_blank" class="w-10 h-10 rounded bg-gray-800 flex items-center justify-center hover:bg-green-500 hover:text-white transition">
                             <i class="fab fa-whatsapp text-lg"></i>
                         </a>
                     </div>
@@ -379,7 +441,7 @@
     </footer>
 
     <script>
-        // Menu Mobile Toggle
+        // 1. Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -393,17 +455,41 @@
             });
         });
 
-        // Function untuk Toggle Deskripsi Publikasi
+        // 2. Publication Description Toggle
         function togglePub(id, btn) {
             const content = document.getElementById(id);
+            const icon = btn.querySelector('i');
+            
             content.classList.toggle('hidden');
             
             if (content.classList.contains('hidden')) {
-                btn.innerText = 'Baca Selengkapnya';
+                btn.innerHTML = 'Baca Selengkapnya <i class="fas fa-chevron-down text-xs"></i>';
             } else {
-                btn.innerText = 'Tutup Deskripsi';
+                btn.innerHTML = 'Tutup Deskripsi <i class="fas fa-chevron-up text-xs"></i>';
             }
         }
+
+        // 3. Scroll Reveal Animation
+        // Kita menggunakan Intersection Observer API untuk performa terbaik
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class 'active' saat elemen masuk viewport
+                    entry.target.classList.add('active');
+                    // (Opsional) Stop observing setelah muncul agar tidak animasi ulang
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.15, // Elemen harus 15% terlihat baru animasi jalan
+            rootMargin: "0px 0px -50px 0px" // Offset sedikit dari bawah
+        });
+
+        reveals.forEach(element => {
+            revealOnScroll.observe(element);
+        });
     </script>
 </body>
 </html>
