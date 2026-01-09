@@ -85,6 +85,7 @@
                 <a href="#home" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Home</a>
                 <a href="#about" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">About Me</a>
                 <a href="#experience" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Experience</a>
+                <a href="#publication" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Publication</a>
                 <a href="#contact" class="block px-3 py-3 font-bold text-primary">Contact</a>
             </div>
         </div>
@@ -238,6 +239,7 @@
     <section class="py-20 bg-surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
                 <div id="achievement" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-primary text-xl">
@@ -247,6 +249,7 @@
                     </div>
                     <p class="text-gray-500 italic">Data achievement akan ditambahkan segera.</p>
                 </div>
+
                 <div id="certification" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xl">
@@ -256,7 +259,7 @@
                     </div>
                     <p class="text-gray-500 italic">Data sertifikasi akan ditambahkan segera.</p>
                 </div>
-                
+
                 <div id="publication" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl">
@@ -265,18 +268,40 @@
                         <h3 class="font-heading text-xl font-bold text-dark">Publications</h3>
                     </div>
                     
-                    <div class="group">
-                        <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank" class="block">
-                            <h4 class="font-bold text-dark group-hover:text-primary transition leading-snug mb-3">
-                                Penerapan Smart Grid dan Keberlanjutan untuk Efisiensi Energi Industri Otomotif di Patimban Berstandar GBC Indonesia
+                    <div class="border-b border-gray-100 pb-2 mb-4 last:border-0 last:mb-0">
+                        <div class="flex flex-col gap-2">
+                            <h4 class="font-bold text-dark text-lg leading-snug hover:text-primary transition">
+                                <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank">
+                                    Penerapan Smart Grid dan Keberlanjutan untuk Efisiensi Energi Industri Otomotif di Patimban Berstandar GBC Indonesia
+                                </a>
                             </h4>
-                        </a>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                            Beberapa waktu lalu, saya mengikuti sebuah lomba esai yang mengangkat isu energi dan teknologi industri. Esai ini membahas bagaimana teknologi Smart Grid menjadi kunci dalam mendukung efisiensi energi di kawasan industri otomotif Patimban, melalui integrasi manajemen beban listrik, energi terbarukan, hingga sistem pencahayaan alami.
-                        </p>
-                        <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank" class="inline-flex items-center text-sm font-semibold text-primary hover:underline">
-                            Baca Publikasi <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                        </a>
+                            <span class="text-xs font-semibold text-primary bg-orange-50 w-fit px-2 py-1 rounded">Maret 2025</span>
+                        </div>
+
+                        <div class="mt-3 text-sm text-gray-600 leading-relaxed">
+                            <p>
+                                Beberapa waktu lalu, saya mengikuti sebuah lomba esai yang mengangkat isu energi dan teknologi industri. Kini, saya memutuskan untuk membagikan kembali tulisan tersebut agar bisa diakses secara lebih luas.
+                            </p>
+                            
+                            <div id="pub-desc-1" class="hidden mt-2 space-y-2">
+                                <p>
+                                    Esai ini membahas bagaimana teknologi Smart Grid menjadi kunci dalam mendukung efisiensi energi di kawasan industri otomotif Patimban, melalui integrasi manajemen beban listrik, energi terbarukan, hingga sistem pencahayaan alami.
+                                </p>
+                                <p>
+                                    Harapannya, tulisan ini bisa membuka diskusi tentang pentingnya transformasi energi cerdas di kawasan industri Indonesia.
+                                </p>
+                            </div>
+                            
+                            <button onclick="togglePub('pub-desc-1', this)" class="text-primary font-semibold text-xs mt-2 hover:underline focus:outline-none">
+                                Baca Selengkapnya
+                            </button>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a href="https://www.researchgate.net/publication/393252047_PENERAPAN_SMART_GRID_DAN_KEBERLANJUTAN_UNTUK_EFISIENSI_ENERGI_INDUSTRI_OTOMOTIF_DI_PATIMBAN_BERSTANDAR_GBC_INDONESIA" target="_blank" class="inline-flex items-center text-sm font-semibold text-dark hover:text-primary transition bg-gray-50 px-3 py-2 rounded-lg">
+                                <i class="fas fa-external-link-alt mr-2"></i> Buka di ResearchGate
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -354,6 +379,7 @@
     </footer>
 
     <script>
+        // Menu Mobile Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -366,6 +392,18 @@
                 menu.classList.add('hidden');
             });
         });
+
+        // Function untuk Toggle Deskripsi Publikasi
+        function togglePub(id, btn) {
+            const content = document.getElementById(id);
+            content.classList.toggle('hidden');
+            
+            if (content.classList.contains('hidden')) {
+                btn.innerText = 'Baca Selengkapnya';
+            } else {
+                btn.innerText = 'Tutup Deskripsi';
+            }
+        }
     </script>
 </body>
 </html>
