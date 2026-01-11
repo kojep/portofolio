@@ -125,14 +125,14 @@
                     </a>
                 </div>
                 
-                <div class="hidden lg:flex space-x-8 xl:space-x-10">
+                <div class="hidden lg:flex space-x-6 xl:space-x-8">
                     <a href="#home" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Home</a>
-                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">About Me</a>
+                    <a href="#projects" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Projects</a>
                     <a href="#experience" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Experience</a>
                     <a href="#achievement" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Achievement</a>
                     <a href="#certification" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Certification</a>
                     <a href="#publication" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Publication</a>
-                    <a href="#projects" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Projects</a>
+                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">About Me</a>
                     <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Contact</a>
                 </div>
 
@@ -147,12 +147,12 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg h-screen overflow-y-auto pb-32">
             <div class="px-4 pt-2 pb-6 space-y-1">
                 <a href="#home" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Home</a>
-                <a href="#about" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">About Me</a>
+                <a href="#projects" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Projects</a>
                 <a href="#experience" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Experience</a>
                 <a href="#achievement" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Achievement</a>
                 <a href="#certification" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Certification</a>
                 <a href="#publication" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Publication</a>
-                <a href="#projects" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">Projects</a>
+                <a href="#about" class="block px-3 py-3 font-medium text-gray-600 hover:text-primary">About Me</a>
                 <a href="#contact" class="block px-3 py-3 font-bold text-primary">Contact</a>
             </div>
         </div>
@@ -229,13 +229,67 @@
         </div>
     </section>
 
-    <section id="about" class="reveal py-24 bg-surface">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-3">Profile</h2>
-            <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-8">About Me</h3>
-            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
-                "Saya adalah seorang mahasiswa S1 Teknik Elektro di Institut Teknologi PLN dengan pengalaman di bidang pemrograman, digital marketing dan bisnis kreatif 3D Printing. Memiliki minat pada pengembangan teknologi, strategi pemasaran digital serta membangun brand melalui konten dan produk inovatif."
-            </p>
+    <section id="projects" class="reveal py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="w-12 h-12 bg-green-100 rounded-lg inline-flex items-center justify-center text-green-600 text-xl mb-4 shadow-sm">
+                    <i class="fas fa-laptop-code"></i>
+                </span>
+                <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark">Featured Projects</h3>
+                <p class="text-gray-500 mt-2">Beberapa proyek teknologi yang telah saya kerjakan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="group bg-white rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden shrink-0">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+                         <img src="project-figure.png" alt="3D Figure Project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Advanced 3D Figure Replication</h4>
+                        <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Replika figur 3D dengan tingkat kemiripan tinggi, detail presisi, dan finishing premium hasil produksi profesional.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline tracking-wide">
+                                View Project <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden shrink-0">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+                         <img src="project-keyboard.png" alt="Keyboard Cable Project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Premium Custom Coiled Aviator Keyboard Cable</h4>
+                        <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Kabel keyboard coiled aviator custom dengan standar premium, dirancang untuk estetika, daya tahan, dan performa koneksi yang optimal.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline tracking-wide">
+                                View Project <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden shrink-0">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+                         <img src="project-voron.jpg" alt="Voron Stealthburner Project" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Voron Stealthburner Toolhead Integration on Ender 5</h4>
+                        <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Modifikasi toolhead Ender 5 ke sistem Voron Stealthburner dengan hotend TZ E3 untuk meningkatkan performa thermal, airflow, dan kualitas cetak.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline tracking-wide">
+                                View Project <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -251,7 +305,6 @@
                     <span class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 text-sm text-primary"><i class="fas fa-briefcase"></i></span>
                     Professional Experience
                 </h4>
-                
                 <div class="space-y-12 border-l-2 border-gray-100 ml-3 md:ml-4 pl-8 md:pl-8 relative">
                     <div class="relative group">
                         <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-primary group-hover:scale-125 transition-transform duration-300"></span>
@@ -264,13 +317,11 @@
                             <li>Merancang dan mengelola konten visual serta konten media sosial laboratorium.</li>
                         </ul>
                     </div>
-
                     <div class="relative group">
                          <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-dark group-hover:bg-primary transition-colors duration-300"></span>
                          <h4 class="text-xl font-bold text-dark">Digital Marketing Specialist</h4>
                          <p class="text-gray-700 font-medium mt-1">Nama Perusahaan (Placeholder)</p>
                          <p class="text-sm text-gray-500 mt-1 mb-6">Total Durasi: 1 thn 3 bln</p>
-                         
                          <div class="mb-8 relative pl-6 border-l border-gray-200">
                             <div class="absolute -left-[3px] top-2 h-1.5 w-1.5 rounded-full bg-gray-400"></div>
                             <h5 class="text-lg font-bold text-gray-800">Head of Digital Marketing</h5>
@@ -290,7 +341,6 @@
                             </ul>
                          </div>
                     </div>
-
                     <div class="relative group">
                         <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-dark group-hover:bg-primary transition-colors duration-300"></span>
                         <h4 class="text-xl font-bold text-dark">Co-Founder & Manager Operasional</h4>
@@ -309,7 +359,6 @@
                     <span class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 text-sm text-blue-600"><i class="fas fa-users"></i></span>
                     Organizational Experience
                 </h4>
-                
                 <div class="space-y-12 border-l-2 border-gray-100 ml-3 md:ml-4 pl-8 md:pl-8 relative">
                     <div class="relative group">
                         <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-400 group-hover:bg-blue-600 transition-colors duration-300"></span>
@@ -329,58 +378,50 @@
                     <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 text-sm text-green-600"><i class="fas fa-calendar-check"></i></span>
                     Volunteering & Event Experience
                 </h4>
-                
                 <div class="space-y-12 border-l-2 border-gray-100 ml-3 md:ml-4 pl-8 md:pl-8 relative">
-                    
                     <div class="relative group">
                         <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-400 group-hover:bg-green-600 transition-colors duration-300"></span>
                         <h4 class="text-xl font-bold text-dark">Divisi Guide, Panitia "Karisma Arcana 2025"</h4>
                         <p class="text-gray-700 font-medium mt-1">Pekan Penerimaan Mahasiswa Baru 2025 - Institut Teknologi PLN</p>
                         <p class="text-sm text-gray-500 mt-1 mb-4">Jul 2025 - Sep 2025 · 3 bln</p>
                         <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 text-sm leading-relaxed">
-                            <li>Mendampingi dan membimbing mahasiswa baru agar dapat beradaptasi dengan lingkungan kampus secara efektif selama rangkaian kegiatan orientasi.</li>
-                            <li>Sebagai fasilitator sekaligus role model yang membantu memperkenalkan nilai-nilai, budaya, dan sistem akademik kampus kepada mahasiswa baru.</li>
-                            <li>Memastikan setiap mahasiswa baru yang dibimbing memahami informasi penting terkait kehidupan kampus serta aktif berpartisipasi dalam seluruh kegiatan orientasi.</li>
+                            <li>Mendampingi dan membimbing mahasiswa baru agar dapat beradaptasi dengan lingkungan kampus secara efektif.</li>
+                            <li>Sebagai fasilitator sekaligus role model yang membantu memperkenalkan nilai-nilai budaya kampus.</li>
+                            <li>Memastikan mahasiswa baru memahami informasi penting terkait kehidupan kampus.</li>
                         </ul>
                     </div>
-
                     <div class="relative group">
                         <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-400 group-hover:bg-green-600 transition-colors duration-300"></span>
                         <h4 class="text-xl font-bold text-dark">Sekretaris, HUT-24 HME FKET ITPLN</h4>
                         <p class="text-gray-700 font-medium mt-1">HME FKET IT-PLN</p>
                         <p class="text-sm text-gray-500 mt-1 mb-4">Jul 2025 - Sekarang · 7 bln</p>
                         <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 text-sm leading-relaxed">
-                            <li>Mengelola administrasi yang berkaitan dengan kebutuhan setiap divisi, termasuk pembuatan surat undangan dan surat peminjaman.</li>
-                            <li>Bertindak sebagai pengelola administrasi dalam kegiatan HUT HME ke-24.</li>
-                            <li>Bertanggung jawab penuh atas kelengkapan dan ketertiban dokumen administrasi yang dikelola selama kegiatan berlangsung.</li>
+                            <li>Mengelola administrasi divisi, termasuk pembuatan surat undangan dan peminjaman.</li>
+                            <li>Bertanggung jawab penuh atas kelengkapan dan ketertiban dokumen administrasi.</li>
                         </ul>
                     </div>
-
                     <div class="relative group">
                         <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-400 group-hover:bg-green-600 transition-colors duration-300"></span>
                         <h4 class="text-xl font-bold text-dark">Divisi Hubungan Masyarakat, Panitia Buka Bersama Elektro 2025</h4>
                         <p class="text-gray-700 font-medium mt-1">HME FKET IT-PLN</p>
                         <p class="text-sm text-gray-500 mt-1 mb-4">Nov 2024 - Mar 2025 · 5 bln</p>
                         <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 text-sm leading-relaxed">
-                            <li>Mengelola komunikasi eksternal dan internal terkait acara, termasuk membuat dan menyebarkan undangan resmi kepada peserta, dosen, dan pihak terkait.</li>
-                            <li>Menjalin koordinasi dengan peserta dan tamu undangan sebagai penghubung antara panitia dan pihak luar, serta memastikan penyampaian informasi berjalan lancar.</li>
+                            <li>Mengelola komunikasi eksternal dan internal, menyebarkan undangan resmi.</li>
+                            <li>Menjalin koordinasi dengan peserta dan tamu undangan sebagai penghubung panitia.</li>
                         </ul>
                     </div>
-
                     <div class="relative group">
                         <span class="absolute -left-[41px] md:-left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-400 group-hover:bg-green-600 transition-colors duration-300"></span>
                         <h4 class="text-xl font-bold text-dark">Student Volunteer, Panitia ITPLN Future Energy Expo 2025</h4>
                         <p class="text-gray-700 font-medium mt-1">Institut Teknologi PLN</p>
                         <p class="text-sm text-gray-500 mt-1 mb-4">Feb 2025 · 1 bln</p>
                         <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 text-sm leading-relaxed">
-                            <li>Mendukung tim acara secara fleksibel di berbagai kebutuhan lapangan, termasuk membantu alur acara, teknis ringan, serta menjadi penghubung antara panitia dan peserta.</li>
-                            <li>Berkontribusi dalam menjaga antusiasme peserta sepanjang acara untuk memastikan pengalaman event yang menyenangkan dan berkesan.</li>
+                            <li>Mendukung tim acara di berbagai kebutuhan lapangan dan teknis ringan.</li>
+                            <li>Berkontribusi dalam menjaga antusiasme peserta sepanjang acara.</li>
                         </ul>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -424,13 +465,11 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
                 <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 hover:shadow-md transition bg-surface flex flex-col h-full relative group">
                     <div class="mb-4">
                         <h4 class="font-bold text-dark text-lg leading-snug group-hover:text-blue-600 transition">Study Case Competition at REVEAL 2025</h4>
                         <p class="text-sm text-gray-600 mt-1">Renewable Energy Innovation Festival</p>
                     </div>
-                    
                     <div class="mt-auto space-y-3">
                         <div class="flex items-center gap-2 text-xs text-gray-500">
                             <i class="fas fa-building text-blue-400"></i>
@@ -440,24 +479,20 @@
                             <i class="far fa-calendar text-blue-400"></i>
                             <span>Mei 2025</span>
                         </div>
-                        
                         <div class="flex items-center gap-2 text-[10px] text-gray-500 font-mono bg-white p-2 rounded border border-gray-100">
                             <i class="fas fa-fingerprint text-gray-400"></i>
                             <span class="truncate" title="591/03/SRE/EXT/VI/2025">591/03/SRE/EXT/VI/2025</span>
                         </div>
-
                          <a href="#" class="block text-center text-xs font-bold text-blue-600 bg-blue-50 py-2 rounded hover:bg-blue-100 transition mt-2">
                             Lihat Sertifikat <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 hover:shadow-md transition bg-surface flex flex-col h-full relative group">
                     <div class="mb-4">
                         <h4 class="font-bold text-dark text-lg leading-snug group-hover:text-blue-600 transition">BEES English Language Certificate by LDC</h4>
                         <p class="text-sm text-gray-600 mt-1">English Proficiency Test</p>
                     </div>
-                    
                     <div class="mt-auto space-y-3">
                         <div class="flex items-center gap-2 text-xs text-gray-500">
                             <i class="fas fa-building text-blue-400"></i>
@@ -467,24 +502,20 @@
                             <i class="far fa-calendar text-blue-400"></i>
                             <span>Feb 2025</span>
                         </div>
-                        
                         <div class="flex items-center gap-2 text-[10px] text-gray-500 font-mono bg-white p-2 rounded border border-gray-100">
                             <i class="fas fa-fingerprint text-gray-400"></i>
                             <span class="truncate" title="5239/E032/BEES/11/02/2025">5239/E032/BEES/11/02/2025</span>
                         </div>
-
                          <a href="#" class="block text-center text-xs font-bold text-blue-600 bg-blue-50 py-2 rounded hover:bg-blue-100 transition mt-2">
                             Lihat Sertifikat <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="border border-gray-200 p-6 rounded-xl hover:border-blue-400 hover:shadow-md transition bg-surface flex flex-col h-full relative group">
                     <div class="mb-4">
                         <h4 class="font-bold text-dark text-lg leading-snug group-hover:text-blue-600 transition">Pembukuan Keuangan Menggunakan Aplikasi SI Apik</h4>
                         <p class="text-sm text-gray-600 mt-1">Financial Bookkeeping Training</p>
                     </div>
-                    
                     <div class="mt-auto space-y-3">
                         <div class="flex items-center gap-2 text-xs text-gray-500">
                             <i class="fas fa-building text-blue-400"></i>
@@ -494,18 +525,15 @@
                             <i class="far fa-calendar text-blue-400"></i>
                             <span>Sep 2023</span>
                         </div>
-                        
                         <div class="flex items-center gap-2 text-[10px] text-gray-500 font-mono bg-white p-2 rounded border border-gray-100">
                             <i class="fas fa-fingerprint text-gray-400"></i>
                             <span class="truncate" title="#9233564">ID: #9233564</span>
                         </div>
-
                          <a href="#" class="block text-center text-xs font-bold text-blue-600 bg-blue-50 py-2 rounded hover:bg-blue-100 transition mt-2">
                             Lihat Sertifikat <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -558,73 +586,13 @@
         </div>
     </section>
 
-    <section id="projects" class="reveal py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="w-12 h-12 bg-green-100 rounded-lg inline-flex items-center justify-center text-green-600 text-xl mb-4 shadow-sm">
-                    <i class="fas fa-laptop-code"></i>
-                </span>
-                <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark">Featured Projects</h3>
-                <p class="text-gray-500 mt-2">Beberapa proyek teknologi yang telah saya kerjakan.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="group bg-surface rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200 relative overflow-hidden shrink-0">
-                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                         <img src="project-figure.png" 
-                              alt="3D Figure Project" 
-                              class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Advanced 3D Figure Replication</h4>
-                        <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Replika figur 3D dengan tingkat kemiripan tinggi, detail presisi, dan finishing premium hasil produksi profesional.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline tracking-wide">
-                                View Project <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group bg-surface rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200 relative overflow-hidden shrink-0">
-                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                         <img src="project-keyboard.png" 
-                              alt="Keyboard Cable Project" 
-                              class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Premium Custom Coiled Aviator Keyboard Cable</h4>
-                        <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Kabel keyboard coiled aviator custom dengan standar premium, dirancang untuk estetika, daya tahan, dan performa koneksi yang optimal.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline tracking-wide">
-                                View Project <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group bg-surface rounded-2xl overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200 relative overflow-hidden shrink-0">
-                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                         <img src="project-voron.jpg" 
-                              alt="Voron Stealthburner Project" 
-                              class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Voron Stealthburner Toolhead Integration on Ender 5</h4>
-                        <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Modifikasi toolhead Ender 5 ke sistem Voron Stealthburner dengan hotend TZ E3 untuk meningkatkan performa thermal, airflow, dan kualitas cetak.</p>
-                        <div class="mt-auto">
-                            <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline tracking-wide">
-                                View Project <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <section id="about" class="reveal py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-3">Profile</h2>
+            <h3 class="font-heading text-3xl md:text-4xl font-bold text-dark mb-8">About Me</h3>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
+                "Saya adalah seorang mahasiswa S1 Teknik Elektro di Institut Teknologi PLN dengan pengalaman di bidang pemrograman, digital marketing dan bisnis kreatif 3D Printing. Memiliki minat pada pengembangan teknologi, strategi pemasaran digital serta membangun brand melalui konten dan produk inovatif."
+            </p>
         </div>
     </section>
 
