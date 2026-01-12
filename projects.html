@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Jevandry - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&family=Fira+Code&display=swap" rel="stylesheet">
+    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter'], heading: ['Poppins'], mono: ['Fira Code'] }, colors: { primary: '#f97316', primaryHover: '#ea580c', dark: '#0f172a', darker: '#020617', light: '#ffffff', surface: '#fff7ed' } } } } </script>
+</head>
+<body class="font-sans text-dark bg-white antialiased flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 top-0">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="font-heading text-2xl font-bold text-dark">Jevandry<span class="text-primary">.</span></a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                <a href="projects.html" class="text-primary font-bold">Projects</a>
+                <a href="experience.html" class="text-gray-600 hover:text-primary">Experience</a>
+                <a href="credentials.html" class="text-gray-600 hover:text-primary">Credentials</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 max-w-7xl mx-auto px-4 w-full">
+        <div class="text-center mb-16">
+            <h1 class="font-heading text-4xl md:text-5xl font-bold text-dark mb-4">All <span class="text-primary">Projects</span></h1>
+            <p class="text-gray-500 max-w-2xl mx-auto">Kumpulan proyek teknologi, digital marketing, dan engineering yang telah saya kerjakan dengan dedikasi tinggi.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 flex flex-col h-full">
+                <div class="h-56 bg-gray-100 relative overflow-hidden shrink-0">
+                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+                     <img src="project-figure.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Advanced 3D Figure Replication</h4>
+                    <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Replika figur 3D dengan tingkat kemiripan tinggi, detail presisi, dan finishing premium hasil produksi profesional.</p>
+                    <div class="mt-auto">
+                        <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 flex flex-col h-full">
+                <div class="h-56 bg-gray-100 relative overflow-hidden shrink-0">
+                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+                     <img src="project-keyboard.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Premium Custom Coiled Aviator Cable</h4>
+                    <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Kabel keyboard coiled aviator custom dengan standar premium, dirancang untuk estetika, daya tahan, dan performa koneksi yang optimal.</p>
+                    <div class="mt-auto">
+                        <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 flex flex-col h-full">
+                <div class="h-56 bg-gray-100 relative overflow-hidden shrink-0">
+                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+                     <img src="project-voron.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Voron Stealthburner Integration</h4>
+                    <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Modifikasi toolhead Ender 5 ke sistem Voron Stealthburner dengan hotend TZ E3 untuk meningkatkan performa thermal, airflow, dan kualitas cetak.</p>
+                    <div class="mt-auto">
+                        <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-darker text-gray-400 py-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <p>&copy; 2026 Jevandry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
