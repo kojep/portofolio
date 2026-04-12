@@ -148,39 +148,43 @@
             <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 03. ENGINEERING_DESIGN</h3>
             <h4 class="font-heading text-3xl font-extrabold text-dark uppercase mb-8">System Architecture & Mechanics</h4>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12 border-b-2 border-dashed border-gray-300 pb-12">
                 <div>
                     <h5 class="font-heading font-extrabold text-xl uppercase mb-4 border-l-4 border-primary pl-3">Sistem Elektronika & Kendali</h5>
                     <p class="text-gray-700 mb-4">Diotaki oleh mikrokontroler <b>ESP32-S3</b>, FilaMaker memproses data dari Termistor NTC 100k dan Sensor Hall Effect melalui modul ADS1115. Sinyal output kemudian mengendalikan elemen pemanas (via MOSFET) dan motor penarik (via driver TMC2209).</p>
                     
                     <div class="bg-surface border-2 border-dark p-4 mt-6">
                         <p class="font-mono text-xs font-bold text-gray-500 mb-2">PID CONTROL ALGORITHM</p>
-                        <p class="font-mono font-bold text-dark">
+                        <p class="font-mono font-bold text-dark text-lg">
                             u(t) = K<sub>p</sub> e(t) + K<sub>i</sub> &int; e(t)dt + K<sub>d</sub> <sup>de(t)</sup>&frasl;<sub>dt</sub>
                         </p>
-                        <p class="text-xs text-gray-600 mt-2 mt-4">Algoritma ini diterapkan secara ganda: satu untuk menstabilkan suhu (Thermal PID) dan satu lagi untuk menyesuaikan kecepatan putaran Planetary Gear secara adaptif agar diameter filamen tetap konsisten di angka 1.75mm.</p>
+                        <p class="text-xs text-gray-600 mt-4">Algoritma ini diterapkan secara ganda: satu untuk menstabilkan suhu (Thermal PID) dan satu lagi untuk menyesuaikan kecepatan putaran Planetary Gear secara adaptif agar diameter filamen tetap konsisten di angka 1.75mm.</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="bg-white border-2 border-dark p-2 shadow-industrial-sm">
-                        <img src="image_75b6a6.png" alt="PCB Layout and Schematic" class="w-full h-auto object-cover border border-gray-200">
-                        <p class="font-mono text-[10px] text-center mt-2 font-bold uppercase text-gray-500">Fig 1. Schematic & UI Mockup</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white border-2 border-dark p-2 shadow-industrial-sm flex flex-col justify-between">
+                        <img src="schematicfilamaker.png" alt="Schematic FilaMaker" class="w-full h-auto object-cover border border-gray-200">
+                        <p class="font-mono text-[10px] text-center mt-3 font-bold uppercase text-gray-500">Fig 1. Schematic Diagram</p>
+                    </div>
+                    <div class="bg-white border-2 border-dark p-2 shadow-industrial-sm flex flex-col justify-between">
+                        <img src="pcbfilamaker.png" alt="PCB Layout FilaMaker" class="w-full h-auto object-cover border border-gray-200">
+                        <p class="font-mono text-[10px] text-center mt-3 font-bold uppercase text-gray-500">Fig 2. Custom PCB Layout V1.0</p>
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="order-2 lg:order-1 bg-white border-2 border-dark p-2 shadow-industrial-sm">
-                    <img src="image_75b689.png" alt="Mechanical Design" class="w-full h-auto object-cover border border-gray-200">
-                    <p class="font-mono text-[10px] text-center mt-2 font-bold uppercase text-gray-500">Fig 2. CAD Design & Technical Drawing</p>
+                    <img src="zonafilamaker.png" alt="3 Zona Mekanik FilaMaker" class="w-full h-auto object-cover border border-gray-200">
+                    <p class="font-mono text-[10px] text-center mt-2 font-bold uppercase text-gray-500">Fig 3. Mechanical Zoning Strategy</p>
                 </div>
                 <div class="order-1 lg:order-2">
                     <h5 class="font-heading font-extrabold text-xl uppercase mb-4 border-l-4 border-primary pl-3">Desain Mekanik (3 Zona)</h5>
                     <ul class="industrial-list text-gray-700 text-sm font-medium space-y-3">
-                        <li><b>Zona Input & Pemanas:</b> Dudukan spool, corong pemandu, dan hotend dengan nozzle 1.7mm.</li>
-                        <li><b>Zona Purifikasi & Sensor:</b> Kipas pendingin terarah, sensor pembaca diameter <i>real-time</i>, dan media filtrasi penangkap mikroplastik.</li>
-                        <li><b>Zona Penarik:</b> Spool penggulung yang terintegrasi dengan NEMA 17 dan <i>Planetary Gear</i> (rasio 6:1) untuk torsi penarikan maksimal dengan desain ringkas.</li>
+                        <li><b>Zona Input & Pemanas:</b> Dudukan spool, corong pemandu, dan hotend dengan nozzle 1.7mm. Proses pemanasan dan pembentukan dimensi awal terjadi di zona ini.</li>
+                        <li><b>Zona Purifikasi & Sensor:</b> Kipas pendingin terarah untuk solidifikasi, sensor Hall-effect sebagai pembaca diameter <i>real-time</i>, serta media filtrasi untuk menangkap mikroplastik.</li>
+                        <li><b>Zona Penarik:</b> Spool penggulung yang terintegrasi dengan motor stepper dan sistem <i>Planetary Gear</i> (rasio 6:1) untuk torsi penarikan maksimal dengan footprint yang lebih ringkas.</li>
                     </ul>
                 </div>
             </div>
