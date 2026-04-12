@@ -6,78 +6,221 @@
     <title>Portofolio Jevandry - Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&family=Fira+Code&display=swap" rel="stylesheet">
-    <script> tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter'], heading: ['Poppins'], mono: ['Fira Code'] }, colors: { primary: '#f97316', primaryHover: '#ea580c', dark: '#0f172a', darker: '#020617', light: '#ffffff', surface: '#fff7ed' } } } } </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'], 
+                        heading: ['Poppins', 'sans-serif'], 
+                        mono: ['Fira Code', 'monospace'] 
+                    },
+                    colors: { 
+                        primary: '#FF6600', /* Asiimov/Prusa Orange */
+                        primaryHover: '#CC5200', 
+                        dark: '#121212', 
+                        darker: '#000000', 
+                        light: '#FFFFFF', 
+                        surface: '#F4F4F5' 
+                    },
+                    boxShadow: {
+                        'industrial': '6px 6px 0px 0px #121212',
+                        'industrial-primary': '6px 6px 0px 0px #FF6600',
+                        'industrial-sm': '3px 3px 0px 0px #121212'
+                    }
+                }
+            }
+        }
+    </script>
+    <style> 
+        /* Asiimov Diagonal Stripes Pattern */
+        .stripes-asiimov {
+            background: repeating-linear-gradient(
+                -45deg,
+                #121212,
+                #121212 10px,
+                #FF6600 10px,
+                #FF6600 20px
+            );
+        }
+        .stripes-light {
+            background: repeating-linear-gradient(
+                -45deg,
+                #ffffff,
+                #ffffff 10px,
+                #f4f4f5 10px,
+                #f4f4f5 20px
+            );
+        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); } 
+        .reveal.active { opacity: 1; transform: translateY(0); } 
+    </style>
 </head>
-<body class="font-sans text-dark bg-white antialiased flex flex-col min-h-screen">
+<body class="font-sans text-dark bg-surface antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 top-0">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <a href="index.html" class="font-heading text-2xl font-bold text-dark">Jevandry<span class="text-primary">.</span></a>
-            <div class="hidden lg:flex space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
-                <a href="projects.html" class="text-primary font-bold">Projects</a>
-                <a href="experience.html" class="text-gray-600 hover:text-primary">Experience</a>
-                <a href="credentials.html" class="text-gray-600 hover:text-primary">Credentials</a>
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-dark transition-all duration-300 top-0 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain">
+                    <a href="index.html" class="font-heading text-2xl font-extrabold text-dark tracking-tighter uppercase hover:text-primary transition">
+                        JEVANDRY<span class="text-primary">.</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex space-x-8 font-mono text-sm font-bold">
+                    <a href="index.html" class="text-dark hover:text-primary transition-colors px-3 py-1">HOME</a>
+                    <a href="projects.html" class="text-white bg-dark px-3 py-1 border-2 border-dark shadow-industrial-primary transition-colors">PROJECTS</a>
+                    <a href="experience.html" class="text-dark hover:text-primary transition-colors px-3 py-1">EXPERIENCE</a>
+                    <a href="credentials.html" class="text-dark hover:text-primary transition-colors px-3 py-1">CREDENTIALS</a>
+                    <a href="index.html#contact" class="text-dark hover:text-primary transition-colors px-3 py-1">CONTACT</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2 border-2 border-dark bg-surface"><i class="fas fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t-2 border-dark absolute w-full h-screen pb-32">
+            <div class="px-4 pt-2 pb-6 space-y-2 font-mono font-bold">
+                <a href="index.html" class="block px-3 py-3 text-dark border-b-2 border-surface">HOME</a>
+                <a href="projects.html" class="block px-3 py-3 bg-dark text-primary border-2 border-dark">PROJECTS</a>
+                <a href="experience.html" class="block px-3 py-3 text-dark border-b-2 border-surface">EXPERIENCE</a>
+                <a href="credentials.html" class="block px-3 py-3 text-dark border-b-2 border-surface">CREDENTIALS</a>
+                <a href="index.html#contact" class="block px-3 py-3 text-dark border-b-2 border-surface">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-20 max-w-7xl mx-auto px-4 w-full">
-        <div class="text-center mb-16">
-            <h1 class="font-heading text-4xl md:text-5xl font-bold text-dark mb-4">All <span class="text-primary">Projects</span></h1>
-            <p class="text-gray-500 max-w-2xl mx-auto">Kumpulan proyek teknologi, digital marketing, dan engineering yang telah saya kerjakan dengan dedikasi tinggi.</p>
+    <main class="flex-grow pt-32 pb-20 max-w-7xl mx-auto px-4 w-full relative">
+        <div class="absolute top-0 right-0 w-[400px] h-[1000px] stripes-light -z-10 transform translate-x-1/3 -skew-x-12 opacity-50"></div>
+
+        <div class="reveal mb-16 border-b-2 border-dark pb-8">
+            <div class="inline-flex items-center gap-2 mb-4 border-2 border-dark bg-white px-3 py-1 font-mono text-xs font-bold text-dark uppercase shadow-industrial-sm">
+                <i class="fas fa-folder-open text-primary"></i> Directory / Projects
+            </div>
+            <h1 class="font-heading text-5xl md:text-6xl font-extrabold text-dark tracking-tight uppercase">
+                Hardware <span class="text-primary bg-dark px-2 text-white inline-block mt-2 transform -skew-x-6 border-4 border-dark">& Code.</span>
+            </h1>
+            <p class="text-lg text-gray-700 mt-6 max-w-2xl font-medium">
+                Arsip lengkap proyek rekayasa perangkat keras, modifikasi printer 3D, integrasi sistem kecerdasan buatan, dan kreasi kustom.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 flex flex-col h-full">
-                <div class="h-56 bg-gray-100 relative overflow-hidden shrink-0">
-                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                     <img src="project-figure.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+        <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                    <div class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">R&D</div>
+                    <img src="filamaker.png" alt="FilaMaker" class="w-full h-full object-cover transition duration-500 hover:scale-105">
                 </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Advanced 3D Figure Replication</h4>
-                    <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Replika figur 3D dengan tingkat kemiripan tinggi, detail presisi, dan finishing premium hasil produksi profesional.</p>
-                    <div class="mt-auto">
-                        <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                <div class="p-6 flex flex-col flex-grow relative">
+                    <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                    <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">FilaMaker Machine</h4>
+                    <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Mesin daur ulang botol PET menjadi filamen 3D printing menggunakan metode pulltrusion dengan kontrol diameter *closed-loop*.</p>
+                    <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
+                        <a href="#" class="inline-flex items-center text-dark font-mono font-bold text-sm hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 flex flex-col h-full">
-                <div class="h-56 bg-gray-100 relative overflow-hidden shrink-0">
-                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                     <img src="project-keyboard.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                    <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">MOD</div>
+                    <img src="project-voron.jpg" alt="Voron Toolhead" class="w-full h-full object-cover transition duration-500 hover:scale-105">
                 </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Premium Custom Coiled Aviator Cable</h4>
-                    <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Kabel keyboard coiled aviator custom dengan standar premium, dirancang untuk estetika, daya tahan, dan performa koneksi yang optimal.</p>
-                    <div class="mt-auto">
-                        <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                <div class="p-6 flex flex-col flex-grow relative">
+                    <div class="w-10 h-1 bg-dark mb-4"></div>
+                    <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">Voron Stealthburner</h4>
+                    <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Modifikasi sistem ekstrusi menggunakan Voron Stealthburner toolhead yang dipadukan dengan TZ E3 hotend untuk performa pendinginan dan aliran filamen yang optimal.</p>
+                    <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
+                        <a href="#" class="inline-flex items-center text-dark font-mono font-bold text-sm hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 flex flex-col h-full">
-                <div class="h-56 bg-gray-100 relative overflow-hidden shrink-0">
-                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                     <img src="project-voron.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                    <div class="absolute top-2 right-2 bg-white text-dark font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">AI/HARDWARE</div>
+                    <img src="logo-stella.png" alt="S.T.E.L.L.A Logo" class="w-full h-full object-cover transition duration-500 hover:scale-105">
                 </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h4 class="font-bold text-xl text-dark group-hover:text-primary transition">Voron Stealthburner Integration</h4>
-                    <p class="text-sm text-gray-500 mt-2 mb-6 leading-relaxed">Modifikasi toolhead Ender 5 ke sistem Voron Stealthburner dengan hotend TZ E3 untuk meningkatkan performa thermal, airflow, dan kualitas cetak.</p>
-                    <div class="mt-auto">
-                        <a href="#" class="inline-flex items-center text-primary font-bold text-sm hover:underline">View Project <i class="fas fa-arrow-right ml-2"></i></a>
+                <div class="p-6 flex flex-col flex-grow relative">
+                    <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                    <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">S.T.E.L.L.A</h4>
+                    <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">
+                        <strong>System That Explain Literally Like AI.</strong> Pengembangan voice assistant terintegrasi AI memanfaatkan Gemini API dan ElevenLabs dalam ekosistem hardware cerdas.
+                    </p>
+                    <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
+                        <a href="#" class="inline-flex items-center text-dark font-mono font-bold text-sm hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></a>
                     </div>
                 </div>
             </div>
+
+            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                    <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">FIRMWARE/SYSADMIN</div>
+                    <img src="klipper.png" alt="Klipper Host TV Box" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative">
+                    <div class="w-10 h-1 bg-dark mb-4"></div>
+                    <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">Klipper via TV Box</h4>
+                    <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Alih fungsi (repurposing) Android TV Box berbasis arsitektur ARM menjadi server Klipper yang andal. Mengoptimalkan sistem operasi Linux untuk komunikasi serial ke 3D printer.</p>
+                    <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
+                        <a href="#" class="inline-flex items-center text-dark font-mono font-bold text-sm hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                    <div class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">CRAFTING</div>
+                    <img src="project-keyboard.png" alt="Aviator Cable" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative">
+                    <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                    <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">Custom Aviator Cable</h4>
+                    <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Kabel keyboard coiled aviator custom dengan standar premium, dirancang khusus untuk estetika, daya tahan, dan performa koneksi yang optimal.</p>
+                    <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
+                        <a href="#" class="inline-flex items-center text-dark font-mono font-bold text-sm hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                    <div class="absolute top-2 right-2 bg-white text-dark font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">3D REPLICA</div>
+                    <img src="project-figure.png" alt="Spectrum Waveform" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative">
+                    <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                    <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">Spectrum Waveform Replica</h4>
+                    <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Replika senjata melee "Spectrum Waveform" dari game Valorant yang sangat realistis. Diproduksi melalui proses 3D printing tingkat presisi tinggi dan teknik *finishing* profesional.</p>
+                    <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
+                        <a href="#" class="inline-flex items-center text-dark font-mono font-bold text-sm hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <footer class="bg-darker text-gray-400 py-8 border-t border-gray-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
-            <p>&copy; 2026 Jevandry. All rights reserved.</p>
+    <footer class="bg-dark text-white pt-12 pb-8 border-t-8 border-primary relative overflow-hidden mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center font-mono font-bold text-sm text-gray-500">
+            <p>SYSTEM_VERSION: 2026.04 // &copy; JEVANDRY // ALL_RIGHTS_RESERVED</p>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn'); 
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('active'); 
+            }); 
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealOnScroll.observe(el));
+    </script>
 </body>
 </html>
