@@ -6,7 +6,7 @@
     <title>Portofolio Jevandry - Electrical Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -18,264 +18,277 @@
                     },
                     colors: { 
                         primary: '#FF6600', /* Asiimov/Prusa Orange */
-                        primaryHover: '#E55C00', 
-                        dark: '#18181B', /* Sedikit lebih soft dari hitam pekat */
-                        darker: '#09090B', 
+                        primaryHover: '#CC5200', 
+                        dark: '#121212', 
+                        darker: '#000000', 
                         light: '#FFFFFF', 
                         surface: '#F4F4F5' 
+                    },
+                    boxShadow: {
+                        'industrial': '6px 6px 0px 0px #121212',
+                        'industrial-primary': '6px 6px 0px 0px #FF6600',
+                        'industrial-sm': '3px 3px 0px 0px #121212'
                     }
                 }
             }
         }
     </script>
     <style> 
-        /* Pola Garis Asiimov yang lebih soft */
+        /* Asiimov Diagonal Stripes Pattern */
         .stripes-asiimov {
             background: repeating-linear-gradient(
                 -45deg,
-                rgba(255, 102, 0, 0.1),
-                rgba(255, 102, 0, 0.1) 10px,
-                transparent 10px,
-                transparent 20px
+                #121212,
+                #121212 10px,
+                #FF6600 10px,
+                #FF6600 20px
             );
         }
-        .stripes-dark {
+        .stripes-light {
             background: repeating-linear-gradient(
                 -45deg,
-                rgba(24, 24, 27, 0.05),
-                rgba(24, 24, 27, 0.05) 10px,
-                transparent 10px,
-                transparent 20px
+                #ffffff,
+                #ffffff 10px,
+                #f4f4f5 10px,
+                #f4f4f5 20px
             );
         }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; } 
+        .industrial-badge { 
+            background: #ffffff; 
+            border: 2px solid #121212;
+            box-shadow: 3px 3px 0px 0px #FF6600;
+        } 
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); } 
         .reveal.active { opacity: 1; transform: translateY(0); } 
     </style>
 </head>
 <body class="font-sans text-dark bg-surface antialiased selection:bg-primary selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300 top-0">
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-dark transition-all duration-300 top-0 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2">
-                    <div class="w-3 h-3 bg-primary rounded-sm"></div>
-                    <a href="index.html" class="font-heading text-2xl font-bold text-dark tracking-tight hover:text-primary transition">
-                        Jevandry<span class="text-primary">.</span>
+                    <div class="w-4 h-4 bg-primary border-2 border-dark"></div>
+                    <a href="index.html" class="font-heading text-2xl font-extrabold text-dark tracking-tighter uppercase hover:text-primary transition">
+                        JEVANDRY<span class="text-primary">.</span>
                     </a>
                 </div>
-                <div class="hidden lg:flex space-x-8 font-medium text-sm">
-                    <a href="index.html" class="text-primary font-bold transition-colors">Home</a>
-                    <a href="projects.html" class="text-gray-600 hover:text-primary transition-colors">Projects</a>
-                    <a href="experience.html" class="text-gray-600 hover:text-primary transition-colors">Experience</a>
-                    <a href="credentials.html" class="text-gray-600 hover:text-primary transition-colors">Credentials</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                <div class="hidden lg:flex space-x-8 font-mono text-sm font-bold">
+                    <a href="index.html" class="text-white bg-dark px-3 py-1 border-2 border-dark shadow-industrial-primary transition-colors">HOME</a>
+                    <a href="projects.html" class="text-dark hover:text-primary transition-colors px-3 py-1">PROJECTS</a>
+                    <a href="experience.html" class="text-dark hover:text-primary transition-colors px-3 py-1">EXPERIENCE</a>
+                    <a href="credentials.html" class="text-dark hover:text-primary transition-colors px-3 py-1">CREDENTIALS</a>
+                    <a href="#contact" class="text-dark hover:text-primary transition-colors px-3 py-1">CONTACT</a>
                 </div>
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2"><i class="fas fa-bars text-xl"></i></button>
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2 border-2 border-dark bg-surface"><i class="fas fa-bars text-xl"></i></button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg h-screen pb-32">
-            <div class="px-4 pt-2 pb-6 space-y-1 font-medium">
-                <a href="index.html" class="block px-3 py-3 text-primary bg-orange-50 rounded-lg">Home</a>
-                <a href="projects.html" class="block px-3 py-3 text-gray-600">Projects</a>
-                <a href="experience.html" class="block px-3 py-3 text-gray-600">Experience</a>
-                <a href="credentials.html" class="block px-3 py-3 text-gray-600">Credentials</a>
-                <a href="#contact" class="block px-3 py-3 text-gray-600">Contact</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t-2 border-dark absolute w-full h-screen pb-32">
+            <div class="px-4 pt-2 pb-6 space-y-2 font-mono font-bold">
+                <a href="index.html" class="block px-3 py-3 bg-dark text-primary border-2 border-dark">HOME</a>
+                <a href="projects.html" class="block px-3 py-3 text-dark border-b-2 border-surface">PROJECTS</a>
+                <a href="experience.html" class="block px-3 py-3 text-dark border-b-2 border-surface">EXPERIENCE</a>
+                <a href="credentials.html" class="block px-3 py-3 text-dark border-b-2 border-surface">CREDENTIALS</a>
+                <a href="#contact" class="block px-3 py-3 text-dark border-b-2 border-surface">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <section class="reveal relative pt-32 pb-20 overflow-hidden bg-white">
-        <div class="absolute top-0 right-0 w-1/2 h-full stripes-dark -z-10 opacity-60 rounded-bl-[100px]"></div>
-        <div class="absolute -top-32 -right-32 w-96 h-96 bg-orange-100 rounded-full blur-3xl -z-20"></div>
+    <section class="reveal relative pt-32 pb-20 overflow-hidden bg-white border-b-4 border-dark">
+        <div class="absolute top-0 right-0 w-[400px] h-[1000px] stripes-light -z-10 transform translate-x-1/3 -skew-x-12 opacity-50"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
             <div class="w-full lg:w-1/2 z-10">
-                <div class="inline-flex items-center gap-2 mb-6 bg-surface border border-gray-200 px-3 py-1.5 rounded-md font-mono text-xs font-bold text-gray-600">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span>System Online</span>
+                <div class="inline-flex items-center gap-2 mb-4 border-2 border-dark bg-surface px-3 py-1 font-mono text-xs font-bold text-dark uppercase shadow-industrial-sm">
+                    <i class="fas fa-microchip text-primary"></i> System Online
                 </div>
-                <h1 class="font-heading text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6 tracking-tight">
+                <h1 class="font-heading text-5xl lg:text-7xl font-extrabold text-dark leading-none mb-6 uppercase tracking-tight">
                     Engineering <br>
-                    <span class="text-primary relative inline-block mt-2">
-                        The Future.
-                        <svg class="absolute w-full h-3 -bottom-1 left-0 text-orange-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 15 100 5" stroke="currentColor" stroke-width="8" fill="transparent"/></svg>
-                    </span>
+                    <span class="text-primary bg-dark px-2 text-white inline-block mt-2 transform -skew-x-6 border-4 border-dark">The Future.</span>
                 </h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                <p class="text-lg text-gray-700 mb-8 max-w-lg leading-relaxed font-medium">
                     Undergraduate Electrical Engineering Student at Institut Teknologi PLN. Specializing in hardware development, custom PCB design, and 3D printer engineering.
                 </p>
-                <div class="flex flex-wrap gap-4 mb-10">
-                    <a href="#contact" class="px-8 py-3.5 bg-primary text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-primaryHover transition hover:-translate-y-0.5">
-                        Let's Talk
+                <div class="flex flex-wrap gap-4 mb-10 font-mono font-bold">
+                    <a href="#contact" class="px-8 py-3.5 bg-primary text-white border-2 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200">
+                        INITIALIZE CONTACT
                     </a>
-                    <a href="cv-jevandry.pdf" download class="px-8 py-3.5 bg-white text-dark font-semibold border border-gray-300 rounded-xl hover:border-dark transition hover:-translate-y-0.5 flex items-center gap-2">
-                        Download CV <i class="fas fa-download text-sm"></i>
+                    <a href="cv-jevandry.pdf" download class="px-8 py-3.5 bg-white text-dark border-2 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm hover:text-primary transition-all duration-200">
+                        DOWNLOAD_CV.PDF <i class="fas fa-download ml-2"></i>
                     </a>
                 </div>
             </div>
             
             <div class="w-full lg:w-1/2 relative flex justify-center lg:justify-end mt-10 lg:mt-0">
-                <div class="relative w-[320px] md:w-[400px]">
-                    <div class="absolute -bottom-4 -right-4 w-full h-full bg-primary rounded-2xl -z-10"></div>
-                    <div class="absolute -top-4 -left-4 w-32 h-32 stripes-asiimov rounded-xl -z-10"></div>
+                <div class="relative w-[320px] md:w-[400px] bg-white border-4 border-dark p-2 shadow-industrial">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 stripes-asiimov border-4 border-dark -z-10"></div>
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary border-4 border-dark -z-10"></div>
                     
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Jevandry" class="w-full h-auto object-contain relative z-0 bg-white border border-gray-100 rounded-2xl shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Jevandry" class="w-full h-auto object-contain relative z-0 border-2 border-dark grayscale hover:grayscale-0 transition-all duration-500">
                     
-                    <div class="absolute top-10 -right-6 bg-white py-2.5 px-4 rounded-xl shadow-lg flex items-center gap-2 border border-gray-100">
-                        <i class="fas fa-microchip text-primary"></i> 
-                        <span class="font-semibold text-sm text-dark">Hardware Maker</span>
+                    <div class="absolute top-10 -right-8 industrial-badge py-2 px-4 flex items-center gap-2">
+                        <i class="fas fa-layer-group text-dark"></i> 
+                        <span class="font-mono font-bold text-xs uppercase text-dark">Hardware Maker</span>
                     </div>
-                    <div class="absolute bottom-16 -left-8 bg-dark py-2.5 px-4 rounded-xl shadow-lg flex items-center gap-2">
-                        <i class="fas fa-code-branch text-white"></i> 
-                        <span class="font-semibold text-sm text-white">Firmware Dev</span>
+                    <div class="absolute bottom-16 -left-10 industrial-badge py-2 px-4 flex items-center gap-2">
+                        <i class="fas fa-code-branch text-primary"></i> 
+                        <span class="font-mono font-bold text-xs uppercase text-dark">Firmware Dev</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="reveal py-20 bg-dark text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-full stripes-asiimov opacity-20"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-3">01. Profile</h2>
-            <h3 class="font-heading text-3xl font-bold mb-8">About Me</h3>
-            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
-                <p class="text-lg text-gray-300 leading-relaxed font-light">
-                    "Saya adalah mahasiswa S1 Teknik Elektro di IT-PLN. Berpengalaman dalam pengembangan perangkat keras (hardware), modifikasi dan pembuatan 3D Printer (Marlin & Klipper), perancangan PCB, serta integrasi sistem otomasi. Memiliki dedikasi tinggi pada inovasi alat dan riset teknologi terapan."
+    <section class="reveal py-16 bg-dark text-white border-b-4 border-primary">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-3">// 01. PROFILE</h2>
+            <h3 class="font-heading text-4xl font-extrabold uppercase mb-8 tracking-tight">System Specifications</h3>
+            <div class="p-8 border-2 border-gray-700 bg-[#1a1a1a] relative">
+                <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary -translate-x-1 -translate-y-1"></div>
+                <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary translate-x-1 translate-y-1"></div>
+                <p class="text-lg text-gray-300 leading-relaxed font-mono">
+                    > "Saya adalah mahasiswa S1 Teknik Elektro di IT-PLN. Berpengalaman dalam pengembangan perangkat keras (hardware), modifikasi dan pembuatan 3D Printer (Marlin & Klipper), perancangan PCB, serta integrasi sistem otomasi. Memiliki dedikasi tinggi pada inovasi alat dan riset teknologi terapan."
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="reveal py-20 bg-surface">
+    <section class="reveal py-20 bg-surface border-b-4 border-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6 border-b border-gray-200 pb-6">
+            <div class="flex justify-between items-end mb-12 border-b-2 border-dark pb-4">
                 <div>
-                    <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">02. Portfolio</h2>
-                    <h3 class="font-heading text-3xl font-bold text-dark">Active Projects</h3>
-                </div>
-                <a href="projects.html" class="hidden md:inline-flex items-center text-primary font-semibold hover:text-primaryHover transition">
-                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden">
-                    <div class="h-48 relative overflow-hidden bg-gray-100">
-                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-dark font-mono text-[10px] font-bold px-2.5 py-1 rounded-md z-10 shadow-sm border border-gray-200">R&D</div>
-                        <img src="project-filamaker.png" alt="FilaMaker" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-xl text-dark mb-2 group-hover:text-primary transition-colors">FilaMaker Machine</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">Mesin daur ulang botol PET menjadi filamen 3D printing menggunakan metode pulltrusion dengan kontrol diameter closed-loop.</p>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden">
-                    <div class="h-48 relative overflow-hidden bg-gray-100">
-                        <div class="absolute top-3 right-3 bg-dark/90 backdrop-blur-sm text-white font-mono text-[10px] font-bold px-2.5 py-1 rounded-md z-10 shadow-sm">HARDWARE MOD</div>
-                        <img src="project-voron.jpg" alt="Voron Toolhead" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-xl text-dark mb-2 group-hover:text-primary transition-colors">ReShape 3D CoreXY</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">Modifikasi ekstensif Ender 5 menjadi CoreXY dengan Triple Z-Axis, linear rail, dan migrasi firmware berbasis Klipper.</p>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden">
-                    <div class="h-48 relative overflow-hidden bg-gray-100">
-                        <div class="absolute top-3 right-3 bg-primary/90 backdrop-blur-sm text-white font-mono text-[10px] font-bold px-2.5 py-1 rounded-md z-10 shadow-sm">AI SYSTEM</div>
-                        <img src="project-ai.jpg" alt="AI Hardware" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-bold text-xl text-dark mb-2 group-hover:text-primary transition-colors">Project Stella</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">Pengembangan voice assistant terintegrasi AI memanfaatkan Gemini API dan ElevenLabs dalam ekosistem hardware cerdas.</p>
-                    </div>
+                    <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-1">// 02. PORTFOLIO</h2>
+                    <h3 class="font-heading text-4xl font-extrabold text-dark uppercase tracking-tight">Active Projects</h3>
                 </div>
             </div>
-            
-            <div class="text-center md:hidden">
-                <a href="projects.html" class="inline-flex items-center text-primary font-semibold">
-                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                    <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                        <div class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">R&D</div>
+                        <img src="project-filamaker.png" alt="FilaMaker" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative">
+                        <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">FilaMaker Machine</h4>
+                        <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Mesin daur ulang botol PET menjadi filamen 3D printing menggunakan metode pulltrusion dengan kontrol diameter *closed-loop*.</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                    <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                        <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">MOD</div>
+                        <img src="project-voron.jpg" alt="Voron Toolhead" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative">
+                        <div class="w-10 h-1 bg-dark mb-4"></div>
+                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">ReShape 3D CoreXY</h4>
+                        <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Modifikasi ekstensif Ender 5 menjadi CoreXY dengan Triple Z-Axis, linear rail, dan migrasi firmware berbasis Klipper.</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
+                    <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                        <div class="absolute top-2 right-2 bg-white text-dark font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">AI/HARDWARE</div>
+                        <img src="project-ai.jpg" alt="AI Hardware" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow relative">
+                        <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">Project Stella</h4>
+                        <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Pengembangan voice assistant terintegrasi AI memanfaatkan Gemini API dan ElevenLabs dalam ekosistem hardware cerdas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center font-mono font-bold">
+                <a href="projects.html" class="inline-flex items-center justify-center px-8 py-3 bg-dark text-white border-2 border-dark hover:bg-primary transition shadow-industrial">
+                    LOAD_ALL_PROJECTS <i class="fas fa-chevron-right ml-2 text-primary group-hover:text-white"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="reveal py-20 bg-white">
+    <section class="reveal py-20 bg-white border-b-4 border-dark">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12 text-center">
-                <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">03. Career Path</h2>
-                <h3 class="font-heading text-3xl font-bold text-dark">Experience</h3>
+            <div class="mb-12 border-b-2 border-dark pb-4">
+                <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 03. CAREER LOG</h2>
+                <h3 class="font-heading text-4xl font-extrabold text-dark uppercase tracking-tight">Runtime History</h3>
             </div>
             
-            <div class="space-y-8 border-l-2 border-gray-200 ml-3 pl-8 relative">
-                <div class="relative group">
-                    <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-primary shadow-sm"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-                        <h4 class="text-xl font-bold text-dark">Laboratory Assistant</h4>
-                        <span class="font-mono text-xs font-semibold text-primary bg-orange-50 px-2.5 py-1 rounded-md">2025 - Present</span>
+            <div class="space-y-0 border-l-4 border-dark ml-3 relative">
+                <div class="relative pl-8 pb-10 group">
+                    <span class="absolute -left-[14px] top-1 h-6 w-6 bg-primary border-4 border-dark"></span>
+                    <div class="bg-surface border-2 border-dark p-6 shadow-industrial-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <h4 class="font-heading text-xl font-extrabold text-dark uppercase">Laboratory Assistant</h4>
+                            <span class="font-mono text-xs font-bold bg-dark text-white px-2 py-1 border border-dark">2025 - PRESENT</span>
+                        </div>
+                        <p class="text-primary font-bold font-mono text-sm mb-3">Laboratorium Algoritma & Pemrograman IT-PLN</p>
+                        <p class="text-sm text-gray-700 font-medium">Mengelola operasional lab, memberikan materi pengajaran pemrograman, dan melakukan penilaian akademis bagi mahasiswa.</p>
                     </div>
-                    <p class="text-gray-800 font-medium text-sm mb-2">Laboratorium Algoritma & Pemrograman IT-PLN</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">Mengelola operasional lab, memberikan materi pengajaran pemrograman, dan melakukan penilaian akademis bagi mahasiswa.</p>
                 </div>
                 
-                <div class="relative group">
-                    <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-gray-300"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-                        <h4 class="text-xl font-bold text-gray-700">OJT - PSDM Commission</h4>
-                        <span class="font-mono text-xs font-semibold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-md">Apr 2025 - Nov 2025</span>
+                <div class="relative pl-8 pb-2">
+                    <span class="absolute -left-[14px] top-1 h-6 w-6 bg-white border-4 border-dark"></span>
+                    <div class="bg-white border-2 border-gray-300 p-6 grayscale opacity-70">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <h4 class="font-heading text-xl font-extrabold text-gray-800 uppercase">OJT - PSDM Commission</h4>
+                            <span class="font-mono text-xs font-bold bg-gray-200 text-gray-700 px-2 py-1 border border-gray-400">APR 2025 - NOV 2025</span>
+                        </div>
+                        <p class="text-gray-600 font-bold font-mono text-sm mb-3">Himpunan Mahasiswa Elektro (HME FKET IT-PLN)</p>
                     </div>
-                    <p class="text-gray-600 font-medium text-sm mb-2">Himpunan Mahasiswa Elektro (HME FKET IT-PLN)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-darker text-gray-300 pt-16 pb-8 border-t-4 border-primary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer id="contact" class="bg-dark text-white pt-16 pb-8 border-t-8 border-primary relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 stripes-asiimov opacity-20 transform translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
                 <div>
-                    <a href="#" class="font-heading text-2xl font-bold text-white tracking-tight mb-4 block">
-                        Jevandry<span class="text-primary">.</span>
+                    <a href="#" class="font-heading text-3xl font-extrabold text-white tracking-tighter uppercase mb-4 block">
+                        JEVANDRY<span class="text-primary">.</span>
                     </a>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        Mahasiswa Teknik Elektro dengan spesialisasi pada pengembangan hardware, desain PCB, dan rekayasa 3D printing.
+                    <p class="text-sm text-gray-400 font-mono mb-6 leading-relaxed">
+                        > Electrical Engineer. Hardware Modder.<br>
+                        > Innovating at the intersection of circuits, code, and mechanical design.
                     </p>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 w-fit px-3 py-1.5 rounded-lg border border-white/10">
-                        <i class="fas fa-map-marker-alt text-primary"></i> <span>Jakarta, Indonesia</span>
+                    <div class="inline-block border-2 border-gray-700 bg-[#1a1a1a] px-4 py-2 font-mono text-sm text-primary font-bold">
+                        LOC: JAKARTA, ID [ONLINE]
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="text-white font-semibold mb-6">Menu</h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="projects.html" class="hover:text-primary transition-colors">Projects</a></li>
-                        <li><a href="experience.html" class="hover:text-primary transition-colors">Experience</a></li>
-                        <li><a href="credentials.html" class="hover:text-primary transition-colors">Credentials</a></li>
+                    <h4 class="font-heading text-lg font-extrabold mb-6 uppercase text-white tracking-widest border-b-2 border-gray-800 pb-2">Directory</h4>
+                    <ul class="space-y-3 font-mono text-sm text-gray-400 font-bold">
+                        <li><a href="projects.html" class="hover:text-primary hover:pl-2 transition-all">> PROJECTS_</a></li>
+                        <li><a href="experience.html" class="hover:text-primary hover:pl-2 transition-all">> EXPERIENCE_</a></li>
+                        <li><a href="credentials.html" class="hover:text-primary hover:pl-2 transition-all">> CREDENTIALS_</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-white font-semibold mb-6">Connect</h4>
+                    <h4 class="font-heading text-lg font-extrabold mb-6 uppercase text-white tracking-widest border-b-2 border-gray-800 pb-2">Network</h4>
                     <div class="flex space-x-3 mb-6">
-                        <a href="https://www.linkedin.com/in/jevandry/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#0077b5] hover:border-[#0077b5] hover:text-white transition-all"><i class="fab fa-linkedin-in text-sm"></i></a>
-                        <a href="https://github.com/kojep" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:border-white hover:text-dark transition-all"><i class="fab fa-github text-sm"></i></a>
-                        <a href="https://instagram.com/kojep.pwma" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#E1306C] hover:border-[#E1306C] hover:text-white transition-all"><i class="fab fa-instagram text-sm"></i></a>
+                        <a href="https://www.linkedin.com/in/jevandry/" target="_blank" class="w-12 h-12 bg-[#1a1a1a] border-2 border-gray-700 flex items-center justify-center hover:bg-[#0077b5] hover:border-[#0077b5] transition-all"><i class="fab fa-linkedin-in text-lg"></i></a>
+                        <a href="https://github.com/kojep" target="_blank" class="w-12 h-12 bg-[#1a1a1a] border-2 border-gray-700 flex items-center justify-center hover:bg-white hover:text-dark hover:border-white transition-all"><i class="fab fa-github text-lg"></i></a>
+                        <a href="https://instagram.com/kojep.pwma" target="_blank" class="w-12 h-12 bg-[#1a1a1a] border-2 border-gray-700 flex items-center justify-center hover:bg-[#E1306C] hover:border-[#E1306C] transition-all"><i class="fab fa-instagram text-lg"></i></a>
                     </div>
-                    <div class="flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-lg w-fit">
-                        <i class="fas fa-envelope text-primary text-sm"></i>
-                        <span class="font-mono text-sm text-gray-300 select-all">kojepcs@gmail.com</span>
+                    <div class="border-2 border-gray-700 bg-[#1a1a1a] p-3 inline-flex items-center gap-3 cursor-text hover:border-primary transition-colors">
+                        <i class="fas fa-terminal text-primary text-sm"></i>
+                        <span class="font-mono text-sm font-bold text-gray-300 select-all">kojepcs@gmail.com</span>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm gap-4 text-gray-500">
-                <p>&copy; 2026 Jevandry. All rights reserved.</p>
-                <a href="#" class="hover:text-primary transition flex items-center gap-2">
-                    Back to Top <i class="fas fa-arrow-up text-xs"></i>
+            <div class="border-t-2 border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm gap-4 font-mono font-bold text-gray-500">
+                <p>SYSTEM_VERSION: 2026.04 // &copy; JEVANDRY</p>
+                <a href="#" class="hover:text-primary transition flex items-center gap-2 border border-gray-700 px-3 py-1">
+                    RETURN_0 <i class="fas fa-level-up-alt"></i>
                 </a>
             </div>
         </div>
@@ -289,4 +302,10 @@
         const reveals = document.querySelectorAll('.reveal');
         const revealOnScroll = new IntersectionObserver((entries) => { 
             entries.forEach(entry => { 
-                if (entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) entry.target.classList.add('active'); 
+            }); 
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealOnScroll.observe(el));
+    </script>
+</body>
+</html>
