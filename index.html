@@ -17,7 +17,7 @@
                         mono: ['Fira Code', 'monospace'] 
                     },
                     colors: { 
-                        primary: '#FF6600', /* Asiimov/Prusa Orange */
+                        primary: '#FF6600', 
                         primaryHover: '#CC5200', 
                         dark: '#121212', 
                         darker: '#000000', 
@@ -34,7 +34,6 @@
         }
     </script>
     <style> 
-        /* Asiimov Diagonal Stripes Pattern */
         .stripes-asiimov {
             background: repeating-linear-gradient(
                 -45deg,
@@ -99,130 +98,267 @@
     <main class="flex-grow pt-32 pb-20 max-w-7xl mx-auto px-4 w-full relative">
         <div class="absolute top-0 right-0 w-[400px] h-[1000px] stripes-light -z-10 transform translate-x-1/3 -skew-x-12 opacity-50"></div>
 
-        <div class="reveal mb-16 border-b-2 border-dark pb-8">
-            <div class="inline-flex items-center gap-2 mb-4 border-2 border-dark bg-white px-3 py-1 font-mono text-xs font-bold text-dark uppercase shadow-industrial-sm">
-                <i class="fas fa-folder-open text-primary"></i> Directory / Projects
+        <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 border-b-4 border-dark pb-16">
+            <div>
+                <div class="inline-flex items-center gap-2 mb-4 border-2 border-dark bg-surface px-3 py-1 font-mono text-xs font-bold text-dark uppercase shadow-industrial-sm">
+                    <i class="fas fa-microchip text-primary"></i> System Online
+                </div>
+                <h1 class="font-heading text-5xl lg:text-7xl font-extrabold text-dark leading-none mb-6 uppercase tracking-tight">
+                    Engineering <br>
+                    <span class="text-primary bg-dark px-2 text-white inline-block mt-2 transform -skew-x-6 border-4 border-dark">The Future.</span>
+                </h1>
+                <p class="text-lg text-gray-700 mb-8 max-w-lg leading-relaxed font-medium">
+                    Undergraduate Electrical Engineering Student at Institut Teknologi PLN. Specializing in hardware development, custom PCB design, and 3D printer engineering.
+                </p>
+                <div class="flex flex-wrap gap-4 font-mono font-bold">
+                    <a href="#contact" class="px-8 py-3.5 bg-primary text-white border-2 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200">
+                        INITIALIZE CONTACT
+                    </a>
+                    <a href="cv-jevandry.pdf" download class="px-8 py-3.5 bg-white text-dark border-2 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm hover:text-primary transition-all duration-200">
+                        DOWNLOAD_CV.PDF <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
             </div>
-            <h1 class="font-heading text-5xl md:text-6xl font-extrabold text-dark tracking-tight uppercase">
-                Hardware <span class="text-primary bg-dark px-2 text-white inline-block mt-2 transform -skew-x-6 border-4 border-dark">& Code.</span>
-            </h1>
-            <p class="text-lg text-gray-700 mt-6 max-w-2xl font-medium">
-                Arsip lengkap proyek rekayasa perangkat keras, modifikasi printer 3D, integrasi sistem kecerdasan buatan, dan kreasi kustom.
-            </p>
+            
+            <div class="relative flex justify-center lg:justify-end mt-10 lg:mt-0">
+                <div class="relative w-[320px] md:w-[400px] bg-white border-4 border-dark p-2 shadow-industrial">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 stripes-asiimov border-4 border-dark -z-10"></div>
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary border-4 border-dark -z-10"></div>
+                    
+                    <img src="hero.png" alt="Jevandry" class="w-full h-auto object-contain relative z-0 border-2 border-dark transition-all duration-500">
+                    
+                    <div class="absolute top-10 -right-8 industrial-badge py-2 px-4 flex items-center gap-2">
+                        <i class="fas fa-layer-group text-dark"></i> 
+                        <span class="font-mono font-bold text-xs uppercase text-dark">Hardware Maker</span>
+                    </div>
+                    <div class="absolute bottom-16 -left-10 industrial-badge py-2 px-4 flex items-center gap-2">
+                        <i class="fas fa-code-branch text-primary"></i> 
+                        <span class="font-mono font-bold text-xs uppercase text-dark">Firmware Dev</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="reveal mb-20 bg-dark text-white border-b-8 border-primary p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 stripes-asiimov opacity-20"></div>
+            <div class="relative z-10 text-center max-w-4xl mx-auto">
+                <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-3">// 01. PROFILE</h2>
+                <h3 class="font-heading text-4xl font-extrabold uppercase mb-8 tracking-tight">System Specifications</h3>
+                <div class="p-8 border-2 border-gray-700 bg-[#1a1a1a] relative">
+                    <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary -translate-x-1 -translate-y-1"></div>
+                    <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary translate-x-1 translate-y-1"></div>
+                    <p class="text-lg text-gray-300 leading-relaxed font-mono">
+                        > "Saya adalah mahasiswa S1 Teknik Elektro di IT-PLN. Berpengalaman dalam pengembangan perangkat keras (hardware), modifikasi dan pembuatan 3D Printer (Marlin & Klipper), perancangan PCB, serta integrasi sistem otomasi. Memiliki dedikasi tinggi pada inovasi alat dan riset teknologi terapan."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal mb-20 border-b-4 border-dark pb-16">
+            <div class="flex justify-between items-end mb-12 border-b-2 border-dark pb-4">
+                <div>
+                    <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-1">// 02. PORTFOLIO</h2>
+                    <h3 class="font-heading text-4xl font-extrabold text-dark uppercase tracking-tight">Active Projects</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
+                    <a href="filamaker.html" class="flex flex-col h-full">
+                        <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                            <div class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">R&D</div>
+                            <img src="filamaker.png" alt="FilaMaker" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow relative">
+                            <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                            <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">FilaMaker Machine</h4>
+                            <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Mesin daur ulang botol PET menjadi filamen 3D printing menggunakan metode pulltrusion dengan kontrol diameter *closed-loop*.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
+                    <a href="stealthburner.html" class="flex flex-col h-full">
+                        <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                            <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">MOD</div>
+                            <img src="project-voron.jpg" alt="Voron Toolhead" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow relative">
+                            <div class="w-10 h-1 bg-dark mb-4"></div>
+                            <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Voron Stealthburner</h4>
+                            <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Modifikasi sistem ekstrusi menggunakan Voron Stealthburner toolhead yang dipadukan dengan TZ E3 hotend untuk performa pendinginan optimal.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
+                    <a href="stella.html" class="flex flex-col h-full">
+                        <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                            <div class="absolute top-2 right-2 bg-white text-dark font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">AI/HARDWARE</div>
+                            <img src="logo-stella.png" alt="S.T.E.L.L.A Logo" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow relative">
+                            <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                            <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">S.T.E.L.L.A</h4>
+                            <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Pengembangan voice assistant terintegrasi AI memanfaatkan Gemini API dan ElevenLabs dalam ekosistem hardware cerdas.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
+                    <a href="klipper.html" class="flex flex-col h-full">
+                        <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                            <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">FIRMWARE/SYSADMIN</div>
+                            <img src="klipper.png" alt="Klipper Host TV Box" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow relative">
+                            <div class="w-10 h-1 bg-dark mb-4"></div>
+                            <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Klipper via TV Box</h4>
+                            <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Alih fungsi Android TV Box berbasis ARM menjadi server Klipper yang andal. Mengoptimalkan sistem operasi Linux.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
+                    <a href="coiledcable.html" class="flex flex-col h-full">
+                        <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                            <div class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">CRAFTING</div>
+                            <img src="project-keyboard.png" alt="Aviator Cable" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow relative">
+                            <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                            <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Custom Aviator Cable</h4>
+                            <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Kabel keyboard coiled aviator custom dengan standar premium, dirancang khusus untuk estetika, daya tahan, dan performa koneksi.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
+                    <a href="waveform.html" class="flex flex-col h-full">
+                        <div class="h-48 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                            <div class="absolute top-2 right-2 bg-white text-dark font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">3D REPLICA</div>
+                            <img src="project-figure.png" alt="Spectrum Waveform" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow relative">
+                            <div class="w-10 h-1 stripes-asiimov mb-4"></div>
+                            <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Spectrum Waveform Replica</h4>
+                            <p class="text-sm text-gray-600 font-medium mb-4 flex-grow">Replika senjata melee "Spectrum Waveform" dari game Valorant. Diproduksi melalui proses 3D printing presisi tinggi dan finishing profesional.</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div> 
+
+            <div class="text-center font-mono font-bold">
+                <a href="projects.html" class="inline-flex items-center justify-center px-8 py-3 bg-dark text-white border-2 border-dark hover:bg-primary transition shadow-industrial">
+                    LOAD_ALL_PROJECTS <i class="fas fa-chevron-right ml-2 text-primary group-hover:text-white"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="reveal mb-12">
+            <div class="mb-12 border-b-2 border-dark pb-4">
+                <h2 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 03. CAREER LOG</h2>
+                <h3 class="font-heading text-4xl font-extrabold text-dark uppercase tracking-tight">Runtime History</h3>
+            </div>
             
-            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
-                <a href="filamaker.html" class="flex flex-col h-full">
-                    <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
-                        <div class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">R&D</div>
-                        <img src="filamaker.png" alt="FilaMaker" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow relative">
-                        <div class="w-10 h-1 stripes-asiimov mb-4"></div>
-                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">FilaMaker Machine</h4>
-                        <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Mesin daur ulang botol PET menjadi filamen 3D printing menggunakan metode pulltrusion dengan kontrol diameter *closed-loop*.</p>
-                        <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                            <span class="inline-flex items-center text-dark font-mono font-bold text-sm group-hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></span>
+            <div class="space-y-0 border-l-4 border-dark ml-3 relative max-w-4xl">
+                
+                <div class="relative pl-8 pb-10 group">
+                    <span class="absolute -left-[14px] top-1 h-6 w-6 bg-primary border-4 border-dark"></span>
+                    <div class="bg-surface border-2 border-dark p-6 shadow-industrial-sm">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <h4 class="font-heading text-xl font-extrabold text-dark uppercase">Laboratory Assistant</h4>
+                            <span class="font-mono text-xs font-bold bg-dark text-white px-2 py-1 border border-dark">MEI 2025 - PRESENT</span>
                         </div>
+                        <p class="text-primary font-bold font-mono text-sm mb-3">Institut Teknologi PLN</p>
+                        <p class="text-sm text-gray-700 font-medium">Mengajar dan membimbing mahasiswa dalam pemrograman, melakukan pemeliharaan peralatan lab, serta mengelola konten visual dan media sosial laboratorium.</p>
                     </div>
+                </div>
+                
+                <div class="relative pl-8 pb-10 group">
+                    <span class="absolute -left-[14px] top-1 h-6 w-6 bg-white border-4 border-dark"></span>
+                    <div class="bg-white border-2 border-gray-300 p-6 hover:border-dark hover:shadow-industrial-sm transition-all duration-300">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <h4 class="font-heading text-xl font-extrabold text-gray-800 uppercase group-hover:text-dark">Head of Digital Marketing</h4>
+                            <span class="font-mono text-xs font-bold bg-gray-200 text-gray-700 px-2 py-1 border border-gray-400">MAR 2024 - AGU 2024</span>
+                        </div>
+                        <p class="text-gray-600 font-bold font-mono text-sm mb-3">PT TSY Indopangan Internasional</p>
+                        <p class="text-sm text-gray-600 font-medium">Memimpin tim digital marketing, menganalisis performa penjualan, dan mengimplementasikan strategi SEO, SEM, & Social Media untuk optimalisasi ROI.</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 pb-2 group">
+                    <span class="absolute -left-[14px] top-1 h-6 w-6 bg-white border-4 border-dark"></span>
+                    <div class="bg-white border-2 border-gray-300 p-6 hover:border-dark hover:shadow-industrial-sm transition-all duration-300">
+                        <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                            <h4 class="font-heading text-xl font-extrabold text-gray-800 uppercase group-hover:text-dark">Co-Founder & Manager Ops.</h4>
+                            <span class="font-mono text-xs font-bold bg-gray-200 text-gray-700 px-2 py-1 border border-gray-400">DES 2021 - JUL 2023</span>
+                        </div>
+                        <p class="text-gray-600 font-bold font-mono text-sm mb-3">Ichipachi 3D Printing (Wirausaha)</p>
+                        <p class="text-sm text-gray-600 font-medium">Mengembangkan rantai pasok produksi 3D printing dari desain digital hingga produk fisik. Merancang strategi operasional bisnis dan logistik pengiriman.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-10 max-w-4xl text-center">
+                <a href="experience.html" class="inline-flex items-center font-mono font-bold text-sm text-gray-600 hover:text-primary transition-colors">
+                    > SEE_FULL_HISTORY_LOG <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
-
-            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
-                <a href="stealthburner.html" class="flex flex-col h-full">
-                    <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
-                        <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">MOD</div>
-                        <img src="project-voron.jpg" alt="Voron Toolhead" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow relative">
-                        <div class="w-10 h-1 bg-dark mb-4"></div>
-                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Voron Stealthburner</h4>
-                        <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Modifikasi sistem ekstrusi menggunakan Voron Stealthburner toolhead yang dipadukan dengan TZ E3 hotend untuk performa pendinginan dan aliran filamen yang optimal.</p>
-                        <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                            <span class="inline-flex items-center text-dark font-mono font-bold text-sm group-hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
-                <a href="stella.html" class="flex flex-col h-full">
-                    <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
-                        <div class="absolute top-2 right-2 bg-white text-dark font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">AI/HARDWARE</div>
-                        <img src="logo-stella.png" alt="S.T.E.L.L.A Logo" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow relative">
-                        <div class="w-10 h-1 stripes-asiimov mb-4"></div>
-                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">S.T.E.L.L.A</h4>
-                        <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">
-                            <strong>System That Explain Literally Like AI.</strong> Pengembangan voice assistant terintegrasi AI memanfaatkan Gemini API dan ElevenLabs dalam ekosistem hardware cerdas.
-                        </p>
-                        <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                            <span class="inline-flex items-center text-dark font-mono font-bold text-sm group-hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
-                <a href="klipper.html" class="flex flex-col h-full">
-                    <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
-                        <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">FIRMWARE/SYSADMIN</div>
-                        <img src="klipper.png" alt="Klipper Host TV Box" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow relative">
-                        <div class="w-10 h-1 bg-dark mb-4"></div>
-                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Klipper via TV Box</h4>
-                        <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Alih fungsi (repurposing) Android TV Box berbasis arsitektur ARM menjadi server Klipper yang andal. Mengoptimalkan sistem operasi Linux untuk komunikasi serial ke 3D printer.</p>
-                        <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                            <span class="inline-flex items-center text-dark font-mono font-bold text-sm group-hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
-                <a href="coiledcable.html" class="flex flex-col h-full">
-                    <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
-                        <div class="absolute top-2 right-2 bg-primary text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">CRAFTING</div>
-                        <img src="project-keyboard.png" alt="Aviator Cable" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow relative">
-                        <div class="w-10 h-1 stripes-asiimov mb-4"></div>
-                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Custom Aviator Cable</h4>
-                        <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Kabel keyboard coiled aviator custom dengan standar premium, dirancang khusus untuk estetika, daya tahan, dan performa koneksi yang optimal.</p>
-                        <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                            <span class="inline-flex items-center text-dark font-mono font-bold text-sm group-hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
-                <a href="waveform.html" class="flex flex-col h-full">
-                    <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
-                        <div class="absolute top-2 right-2 bg-white text-dark font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">3D REPLICA</div>
-                        <img src="project-figure.png" alt="Spectrum Waveform" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow relative">
-                        <div class="w-10 h-1 stripes-asiimov mb-4"></div>
-                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Spectrum Waveform Replica</h4>
-                        <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Replika senjata melee "Spectrum Waveform" dari game Valorant yang sangat realistis. Diproduksi melalui proses 3D printing tingkat presisi tinggi dan teknik *finishing* profesional.</p>
-                        <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                            <span class="inline-flex items-center text-dark font-mono font-bold text-sm group-hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
         </div>
     </main>
 
-    <footer class="bg-dark text-white pt-12 pb-8 border-t-8 border-primary mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono font-bold text-sm text-gray-500">
-            <p>SYSTEM_VERSION: 2026.04 // &copy; JEVANDRY // ALL_RIGHTS_RESERVED</p>
+    <footer id="contact" class="bg-dark text-white pt-16 pb-8 border-t-8 border-primary relative overflow-hidden mt-auto">
+        <div class="absolute top-0 right-0 w-64 h-64 stripes-asiimov opacity-20 transform translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div>
+                    <a href="#" class="font-heading text-3xl font-extrabold text-white tracking-tighter uppercase mb-4 block">
+                        JEVANDRY<span class="text-primary">.</span>
+                    </a>
+                    <p class="text-sm text-gray-400 font-mono mb-6 leading-relaxed">
+                        > Electrical Engineer. Hardware Modder.<br>
+                        > Innovating at the intersection of circuits, code, and mechanical design.
+                    </p>
+                    <div class="inline-block border-2 border-gray-700 bg-[#1a1a1a] px-4 py-2 font-mono text-sm text-primary font-bold">
+                        LOC: TANGERANG, ID [ONLINE]
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading text-lg font-extrabold mb-6 uppercase text-white tracking-widest border-b-2 border-gray-800 pb-2">Directory</h4>
+                    <ul class="space-y-3 font-mono text-sm text-gray-400 font-bold">
+                        <li><a href="projects.html" class="hover:text-primary hover:pl-2 transition-all">> PROJECTS_</a></li>
+                        <li><a href="experience.html" class="hover:text-primary hover:pl-2 transition-all">> EXPERIENCE_</a></li>
+                        <li><a href="credentials.html" class="hover:text-primary hover:pl-2 transition-all">> CREDENTIALS_</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading text-lg font-extrabold mb-6 uppercase text-white tracking-widest border-b-2 border-gray-800 pb-2">Network</h4>
+                    <div class="flex space-x-3 mb-6">
+                        <a href="https://www.linkedin.com/in/jevandry/" target="_blank" class="w-12 h-12 bg-[#1a1a1a] border-2 border-gray-700 flex items-center justify-center hover:bg-[#0077b5] hover:border-[#0077b5] transition-all"><i class="fab fa-linkedin-in text-lg"></i></a>
+                        <a href="https://github.com/kojep" target="_blank" class="w-12 h-12 bg-[#1a1a1a] border-2 border-gray-700 flex items-center justify-center hover:bg-white hover:text-dark hover:border-white transition-all"><i class="fab fa-github text-lg"></i></a>
+                        <a href="https://instagram.com/kojep.pwma" target="_blank" class="w-12 h-12 bg-[#1a1a1a] border-2 border-gray-700 flex items-center justify-center hover:bg-[#E1306C] hover:border-[#E1306C] transition-all"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="https://wa.me/6287888622269" target="_blank" class="w-12 h-12 bg-[#1a1a1a] border-2 border-gray-700 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all"><i class="fab fa-whatsapp text-lg"></i></a>
+                    </div>
+                    <div class="border-2 border-gray-700 bg-[#1a1a1a] p-3 inline-flex items-center gap-3 cursor-text hover:border-primary transition-colors">
+                        <i class="fas fa-terminal text-primary text-sm"></i>
+                        <span class="font-mono text-sm font-bold text-gray-300 select-all">kojepcs@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t-2 border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm gap-4 font-mono font-bold text-gray-500">
+                <p>SYSTEM_VERSION: 2026.04 // &copy; JEVANDRY // ALL_RIGHTS_RESERVED</p>
+                <a href="#" class="hover:text-primary transition flex items-center gap-2 border border-gray-700 px-3 py-1">
+                    RETURN_0 <i class="fas fa-level-up-alt"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
