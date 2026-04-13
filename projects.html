@@ -17,7 +17,7 @@
                         mono: ['Fira Code', 'monospace'] 
                     },
                     colors: { 
-                        primary: '#FF6600', /* Asiimov/Prusa Orange */
+                        primary: '#FF6600', 
                         primaryHover: '#CC5200', 
                         dark: '#121212', 
                         darker: '#000000', 
@@ -34,25 +34,8 @@
         }
     </script>
     <style> 
-        /* Asiimov Diagonal Stripes Pattern */
-        .stripes-asiimov {
-            background: repeating-linear-gradient(
-                -45deg,
-                #121212,
-                #121212 10px,
-                #FF6600 10px,
-                #FF6600 20px
-            );
-        }
-        .stripes-light {
-            background: repeating-linear-gradient(
-                -45deg,
-                #ffffff,
-                #ffffff 10px,
-                #f4f4f5 10px,
-                #f4f4f5 20px
-            );
-        }
+        .stripes-asiimov { background: repeating-linear-gradient(-45deg, #121212, #121212 10px, #FF6600 10px, #FF6600 20px); }
+        .stripes-light { background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 10px, #f4f4f5 10px, #f4f4f5 20px); }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); } 
         .reveal.active { opacity: 1; transform: translateY(0); } 
     </style>
@@ -159,19 +142,21 @@
                 </div>
             </div>
 
-            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
-                <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
-                    <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">FIRMWARE/SYSADMIN</div>
-                    <img src="klipper.png" alt="Klipper Host TV Box" class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                </div>
-                <div class="p-6 flex flex-col flex-grow relative">
-                    <div class="w-10 h-1 bg-dark mb-4"></div>
-                    <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2">Klipper via TV Box</h4>
-                    <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Alih fungsi (repurposing) Android TV Box berbasis arsitektur ARM menjadi server Klipper yang andal. Mengoptimalkan sistem operasi Linux untuk komunikasi serial ke 3D printer.</p>
-                    <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
-                        <a href="#" class="inline-flex items-center text-dark font-mono font-bold text-sm hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></a>
+            <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col cursor-pointer">
+                <a href="klipper.html" class="flex flex-col h-full">
+                    <div class="h-56 relative overflow-hidden border-b-4 border-dark bg-gray-100 p-2">
+                        <div class="absolute top-2 right-2 bg-dark text-white font-mono text-[10px] font-bold px-2 py-1 border-2 border-dark z-10">FIRMWARE/SYSADMIN</div>
+                        <img src="klipper.png" alt="Klipper Host TV Box" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                     </div>
-                </div>
+                    <div class="p-6 flex flex-col flex-grow relative">
+                        <div class="w-10 h-1 bg-dark mb-4"></div>
+                        <h4 class="font-heading font-extrabold text-xl text-dark uppercase mb-2 group-hover:text-primary transition-colors">Klipper via TV Box</h4>
+                        <p class="text-sm text-gray-600 font-medium mb-6 flex-grow">Alih fungsi (repurposing) Android TV Box berbasis arsitektur ARM menjadi server Klipper yang andal. Mengoptimalkan sistem operasi Linux untuk komunikasi serial ke 3D printer.</p>
+                        <div class="mt-auto pt-4 border-t-2 border-dashed border-gray-200">
+                            <span class="inline-flex items-center text-dark font-mono font-bold text-sm group-hover:text-primary transition-colors">READ_DOCS <i class="fas fa-arrow-right ml-2 text-primary"></i></span>
+                        </div>
+                    </div>
+                </a>
             </div>
 
             <div class="group bg-white border-4 border-dark shadow-industrial hover:translate-y-1 hover:shadow-industrial-sm transition-all duration-200 flex flex-col">
