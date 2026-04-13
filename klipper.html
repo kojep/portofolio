@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klipper TV Box - Project Details | Jevandry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'], 
+                        heading: ['Poppins', 'sans-serif'], 
+                        mono: ['Fira Code', 'monospace'] 
+                    },
+                    colors: { 
+                        primary: '#FF6600', 
+                        primaryHover: '#CC5200', 
+                        dark: '#121212', 
+                        darker: '#000000', 
+                        light: '#FFFFFF', 
+                        surface: '#F4F4F5' 
+                    },
+                    boxShadow: {
+                        'industrial': '6px 6px 0px 0px #121212',
+                        'industrial-primary': '6px 6px 0px 0px #FF6600',
+                        'industrial-sm': '3px 3px 0px 0px #121212'
+                    }
+                }
+            }
+        }
+    </script>
+    <style> 
+        .stripes-asiimov { background: repeating-linear-gradient(-45deg, #121212, #121212 10px, #FF6600 10px, #FF6600 20px); }
+        .stripes-light { background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 10px, #f4f4f5 10px, #f4f4f5 20px); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); } 
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .industrial-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+        .industrial-list li::before { content: '>'; position: absolute; left: 0; color: #FF6600; font-family: 'Fira Code', monospace; font-weight: bold; }
+    </style>
+</head>
+<body class="font-sans text-dark bg-surface antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-dark transition-all duration-300 top-0 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain">
+                    <a href="index.html" class="font-heading text-2xl font-extrabold text-dark tracking-tighter uppercase hover:text-primary transition">
+                        JEVANDRY<span class="text-primary">.</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex space-x-8 font-mono text-sm font-bold">
+                    <a href="index.html" class="text-dark hover:text-primary transition-colors px-3 py-1">HOME</a>
+                    <a href="projects.html" class="text-white bg-dark px-3 py-1 border-2 border-dark shadow-industrial-primary transition-colors">PROJECTS</a>
+                    <a href="experience.html" class="text-dark hover:text-primary transition-colors px-3 py-1">EXPERIENCE</a>
+                    <a href="credentials.html" class="text-dark hover:text-primary transition-colors px-3 py-1">CREDENTIALS</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2 border-2 border-dark bg-surface"><i class="fas fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t-2 border-dark absolute w-full h-screen pb-32">
+            <div class="px-4 pt-2 pb-6 space-y-2 font-mono font-bold">
+                <a href="index.html" class="block px-3 py-3 text-dark border-b-2 border-surface">HOME</a>
+                <a href="projects.html" class="block px-3 py-3 bg-dark text-primary border-2 border-dark">PROJECTS</a>
+                <a href="experience.html" class="block px-3 py-3 text-dark border-b-2 border-surface">EXPERIENCE</a>
+                <a href="credentials.html" class="block px-3 py-3 text-dark border-b-2 border-surface">CREDENTIALS</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
+        <div class="absolute top-0 right-0 w-[400px] h-[1000px] stripes-light -z-10 transform translate-x-1/3 -skew-x-12 opacity-50"></div>
+
+        <div class="mb-8">
+            <a href="projects.html" class="inline-flex items-center font-mono font-bold text-sm text-gray-600 hover:text-primary transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> RETURN_TO_DIRECTORY
+            </a>
+        </div>
+
+        <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 border-b-4 border-dark pb-16">
+            <div>
+                <div class="inline-flex items-center gap-2 mb-4 bg-dark text-white px-3 py-1 font-mono text-xs font-bold uppercase border-2 border-dark">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> STATUS: DEPLOYED (SYSADMIN)
+                </div>
+                <h1 class="font-heading text-5xl md:text-6xl font-extrabold text-dark tracking-tight uppercase leading-none mb-4">
+                    Klipper <span class="text-primary">Host</span>
+                </h1>
+                <h2 class="font-mono text-xl font-bold text-gray-600 mb-6">TV Box Repurposing</h2>
+                <p class="text-lg text-gray-700 mb-8 font-medium leading-relaxed">
+                    Mengalihfungsikan (repurposing) Android TV Box berbasis arsitektur ARM menjadi server Klipper yang andal. Solusi <i>cost-effective</i> pengganti Raspberry Pi dengan mengoptimalkan sistem operasi Linux untuk menangani komputasi kinematika 3D printer berkecepatan tinggi.
+                </p>
+                <div class="flex flex-wrap gap-3 font-mono text-xs font-bold text-dark">
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">ARMBIAN / LINUX</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">KLIPPER</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">MOONRAKER</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">COST-EFFECTIVE</span>
+                </div>
+            </div>
+            <div class="bg-white border-4 border-dark p-2 shadow-industrial relative">
+                <div class="absolute -bottom-4 -right-4 w-24 h-24 stripes-asiimov border-4 border-dark -z-10"></div>
+                <img src="klipper.png" alt="Klipper on TV Box" class="w-full h-auto object-cover border-2 border-dark">
+            </div>
+        </div>
+
+        <div class="reveal mb-20">
+            <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 01. THE_CHALLENGE</h3>
+            <h4 class="font-heading text-3xl font-extrabold text-dark uppercase mb-8">Mengapa TV Box?</h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-surface border-2 border-dark p-6 shadow-sm hover:shadow-industrial-sm transition">
+                    <i class="fas fa-microchip text-3xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">Raspberry Pi Cost</h5>
+                    <p class="text-sm text-gray-700">Tingginya harga dan kelangkaan Single Board Computer (SBC) seperti Raspberry Pi membuat upgrade Klipper menjadi kurang ekonomis bagi banyak <i>maker</i>.</p>
+                </div>
+                <div class="bg-surface border-2 border-dark p-6 shadow-sm hover:shadow-industrial-sm transition">
+                    <i class="fas fa-tachometer-alt text-3xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">Computing Power</h5>
+                    <p class="text-sm text-gray-700">Firmware Klipper memindahkan beban komputasi berat (seperti <i>Input Shaping</i> dan <i>Pressure Advance</i>) dari mainboard printer ke prosesor host eksternal.</p>
+                </div>
+                <div class="bg-surface border-2 border-dark p-6 shadow-sm hover:shadow-industrial-sm transition">
+                    <i class="fas fa-recycle text-3xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">E-Waste Utilization</h5>
+                    <p class="text-sm text-gray-700">Banyaknya Android TV Box bekas ISP yang tidak terpakai (e-waste). Padahal, spesifikasi prosesor ARM dan RAM di dalamnya sangat mumpuni untuk menjalankan server Linux.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal mb-20">
+            <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 02. DEPLOYMENT_LOG</h3>
+            <h4 class="font-heading text-3xl font-extrabold text-dark uppercase mb-8">Tahapan Repurposing & Instalasi</h4>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6">
+                    <div class="border-l-4 border-primary pl-4">
+                        <h5 class="font-heading font-extrabold text-xl uppercase text-dark mb-2">1. Flashing Bootloader & OS</h5>
+                        <p class="text-sm text-gray-600 font-medium">Membongkar (bypass) sistem operasi Android bawaan (locked bootloader) dan melakukan instalasi distribusi Linux berbasis Debian/Armbian ke dalam eMMC atau MicroSD. Sistem dikonfigurasi secara <i>headless</i> (via SSH).</p>
+                    </div>
+                    <div class="border-l-4 border-primary pl-4">
+                        <h5 class="font-heading font-extrabold text-xl uppercase text-dark mb-2">2. Klipper Environment (KIAUH)</h5>
+                        <p class="text-sm text-gray-600 font-medium">Menggunakan *Klipper Installation And Update Helper* (KIAUH) untuk menginstal arsitektur inti: Klipper (kinematics engine), Moonraker (API Web Server), dan Mainsail/Fluidd (Web Interface).</p>
+                    </div>
+                    <div class="border-l-4 border-primary pl-4">
+                        <h5 class="font-heading font-extrabold text-xl uppercase text-dark mb-2">3. MCU Compilation & Serial Link</h5>
+                        <p class="text-sm text-gray-600 font-medium">Melakukan kompilasi <i>firmware</i> (make menuconfig) yang disesuaikan dengan arsitektur chip mainboard 3D Printer (Ender 5). Firmware kemudian di-flash ke mainboard, dan komunikasi serial dibangun via kabel USB.</p>
+                    </div>
+                </div>
+
+                <div class="bg-darker border-4 border-dark p-6 shadow-industrial relative text-green-400 font-mono text-xs overflow-hidden">
+                    <div class="flex gap-2 mb-4 border-b border-gray-700 pb-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-2 text-gray-400">root@tvbox:~</span>
+                    </div>
+                    <p class="mb-1"><span class="text-white">root@tvbox:~#</span> lsusb</p>
+                    <p class="mb-3 text-gray-300">Bus 001 Device 004: ID 1a86:7523 QinHeng Electronics CH340 serial converter</p>
+                    
+                    <p class="mb-1"><span class="text-white">root@tvbox:~#</span> ls /dev/serial/by-id/</p>
+                    <p class="mb-3 text-gray-300">usb-1a86_USB_Serial-if00-port0</p>
+                    
+                    <p class="mb-1"><span class="text-white">root@tvbox:~#</span> systemctl status klipper</p>
+                    <p class="mb-1 text-green-300">● klipper.service - Klipper 3D Printer Firmware</p>
+                    <p class="mb-1 text-gray-300">&nbsp;&nbsp; Loaded: loaded (/etc/systemd/system/klipper.service)</p>
+                    <p class="mb-3 text-gray-300">&nbsp;&nbsp; Active: <span class="text-green-400 font-bold">active (running)</span> since Mon 2026-04-13 08:30:00 WIB</p>
+                    
+                    <p class="mb-1"><span class="text-white">root@tvbox:~#</span> _</p>
+                    <span class="absolute bottom-0 right-0 w-8 h-8 bg-darker border-t-4 border-l-4 border-dark"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal bg-white border-4 border-dark p-8 md:p-12 shadow-industrial relative">
+            <div class="absolute top-0 right-0 w-16 h-16 bg-primary border-b-4 border-l-4 border-dark"></div>
+            <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 03. THE_OUTCOME</h3>
+            <h4 class="font-heading text-3xl font-extrabold text-dark uppercase mb-6">Efisiensi & Performa</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 font-medium leading-relaxed mb-4">
+                        Modifikasi ini berhasil mengubah barang yang dianggap "e-waste" menjadi server komputasi tinggi. Biaya yang dikeluarkan untuk Android TV Box bekas rata-rata di bawah Rp 200.000, <b>jauh lebih murah</b> (hingga 80% lebih hemat) dibandingkan membeli Raspberry Pi.
+                    </p>
+                </div>
+                <ul class="industrial-list text-gray-800 text-sm font-bold space-y-3">
+                    <li>Kinerja responsif pada UI Fluidd/Mainsail.</li>
+                    <li>Pemrosesan kinematika sempurna tanpa <i>stuttering</i>.</li>
+                    <li>Kemampuan monitoring via Webcam (OctoEveywhere / Crowsnest) berjalan lancar.</li>
+                    <li>Mendukung fitur canggih Klipper secara penuh (Macros, Input Shaping).</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-white pt-12 pb-8 border-t-8 border-primary mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono font-bold text-sm text-gray-500">
+            <p>SYSTEM_VERSION: 2026.04 // &copy; JEVANDRY // ALL_RIGHTS_RESERVED</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn'); 
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('active'); 
+            }); 
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealOnScroll.observe(el));
+    </script>
+</body>
+</html>
