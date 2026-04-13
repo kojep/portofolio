@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Aviator Cable - Project Details | Jevandry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'], 
+                        heading: ['Poppins', 'sans-serif'], 
+                        mono: ['Fira Code', 'monospace'] 
+                    },
+                    colors: { 
+                        primary: '#FF6600', 
+                        primaryHover: '#CC5200', 
+                        dark: '#121212', 
+                        darker: '#000000', 
+                        light: '#FFFFFF', 
+                        surface: '#F4F4F5' 
+                    },
+                    boxShadow: {
+                        'industrial': '6px 6px 0px 0px #121212',
+                        'industrial-primary': '6px 6px 0px 0px #FF6600',
+                        'industrial-sm': '3px 3px 0px 0px #121212'
+                    }
+                }
+            }
+        }
+    </script>
+    <style> 
+        .stripes-asiimov { background: repeating-linear-gradient(-45deg, #121212, #121212 10px, #FF6600 10px, #FF6600 20px); }
+        .stripes-light { background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 10px, #f4f4f5 10px, #f4f4f5 20px); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); } 
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .industrial-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+        .industrial-list li::before { content: '>'; position: absolute; left: 0; color: #FF6600; font-family: 'Fira Code', monospace; font-weight: bold; }
+    </style>
+</head>
+<body class="font-sans text-dark bg-surface antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-dark transition-all duration-300 top-0 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain">
+                    <a href="index.html" class="font-heading text-2xl font-extrabold text-dark tracking-tighter uppercase hover:text-primary transition">
+                        JEVANDRY<span class="text-primary">.</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex space-x-8 font-mono text-sm font-bold">
+                    <a href="index.html" class="text-dark hover:text-primary transition-colors px-3 py-1">HOME</a>
+                    <a href="projects.html" class="text-white bg-dark px-3 py-1 border-2 border-dark shadow-industrial-primary transition-colors">PROJECTS</a>
+                    <a href="experience.html" class="text-dark hover:text-primary transition-colors px-3 py-1">EXPERIENCE</a>
+                    <a href="credentials.html" class="text-dark hover:text-primary transition-colors px-3 py-1">CREDENTIALS</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2 border-2 border-dark bg-surface"><i class="fas fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t-2 border-dark absolute w-full h-screen pb-32">
+            <div class="px-4 pt-2 pb-6 space-y-2 font-mono font-bold">
+                <a href="index.html" class="block px-3 py-3 text-dark border-b-2 border-surface">HOME</a>
+                <a href="projects.html" class="block px-3 py-3 bg-dark text-primary border-2 border-dark">PROJECTS</a>
+                <a href="experience.html" class="block px-3 py-3 text-dark border-b-2 border-surface">EXPERIENCE</a>
+                <a href="credentials.html" class="block px-3 py-3 text-dark border-b-2 border-surface">CREDENTIALS</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
+        <div class="absolute top-0 right-0 w-[400px] h-[1000px] stripes-light -z-10 transform translate-x-1/3 -skew-x-12 opacity-50"></div>
+
+        <div class="mb-8">
+            <a href="projects.html" class="inline-flex items-center font-mono font-bold text-sm text-gray-600 hover:text-primary transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> RETURN_TO_DIRECTORY
+            </a>
+        </div>
+
+        <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 border-b-4 border-dark pb-16">
+            <div>
+                <div class="inline-flex items-center gap-2 mb-4 bg-dark text-white px-3 py-1 font-mono text-xs font-bold uppercase border-2 border-dark">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> STATUS: COMPLETED (CRAFTING)
+                </div>
+                <h1 class="font-heading text-5xl md:text-6xl font-extrabold text-dark tracking-tight uppercase leading-none mb-4">
+                    Aviator <span class="text-primary">Cable</span>
+                </h1>
+                <h2 class="font-mono text-xl font-bold text-gray-600 mb-6">Premium Coiled Keyboard Cable</h2>
+                <p class="text-lg text-gray-700 mb-8 font-medium leading-relaxed">
+                    Pembuatan kabel keyboard mekanikal custom tipe <i>coiled</i> dengan konektor Aviator (GX16). Proyek ini menggabungkan teknik penyolderan presisi, <i>double-sleeving</i>, dan <i>reverse coiling</i> termal untuk menghasilkan gulungan yang padat, estetis, dan memiliki durabilitas tinggi.
+                </p>
+                <div class="flex flex-wrap gap-3 font-mono text-xs font-bold text-dark">
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">SOLDERING</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">GX16 AVIATOR</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">PARACORD</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">TECHFLEX</span>
+                </div>
+            </div>
+            <div class="bg-white border-4 border-dark p-2 shadow-industrial relative">
+                <div class="absolute -bottom-4 -right-4 w-24 h-24 stripes-asiimov border-4 border-dark -z-10"></div>
+                <img src="project-keyboard.png" alt="Custom Aviator Coiled Cable" class="w-full h-auto object-cover border-2 border-dark">
+            </div>
+        </div>
+
+        <div class="reveal mb-20">
+            <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 01. THE_ANATOMY</h3>
+            <h4 class="font-heading text-3xl font-extrabold text-dark uppercase mb-8">Spesifikasi Material & Komponen</h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-surface border-2 border-dark p-6 shadow-sm hover:shadow-industrial-sm transition">
+                    <i class="fas fa-plug text-3xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">Konektivitas</h5>
+                    <p class="text-sm text-gray-700">Konektor Aviator GX16 4-pin berlapis metal (detachable) yang disolder secara manual ke kabel inti (VCC, D-, D+, GND) untuk sambungan yang kokoh dan modular.</p>
+                </div>
+                <div class="bg-surface border-2 border-dark p-6 shadow-sm hover:shadow-industrial-sm transition">
+                    <i class="fas fa-layer-group text-3xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">Double Sleeving</h5>
+                    <p class="text-sm text-gray-700">Penggunaan lapisan ganda: <b>550 Paracord</b> sebagai lapisan dasar untuk warna solid, dibalut dengan <b>Techflex PET</b> (Polyethylene Terephthalate) sebagai pelindung luar yang memberikan efek visual *pop* dan kekakuan struktural.</p>
+                </div>
+                <div class="bg-surface border-2 border-dark p-6 shadow-sm hover:shadow-industrial-sm transition">
+                    <i class="fas fa-shield-alt text-3xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">Isolasi & Terminasi</h5>
+                    <p class="text-sm text-gray-700">Kabel inti 4-core AWG28 *shielded* untuk mencegah interferensi sinyal, diterminasi dengan *marine-grade heatshrink* berlapis lem di setiap ujung konektor (USB-C & USB-A) untuk perlindungan *strain relief* maksimum.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal mb-20 bg-dark text-white border-b-8 border-primary p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 stripes-asiimov opacity-20"></div>
+            <div class="relative z-10">
+                <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 02. CRAFTING_METHODOLOGY</h3>
+                <h4 class="font-heading text-3xl font-extrabold uppercase mb-8">Teknik Reverse Coiling</h4>
+                
+                
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-8">
+                    <div>
+                        <p class="text-gray-300 font-medium mb-6 leading-relaxed">
+                            Rahasia di balik gulungan (coil) yang sangat padat dan lentur selayaknya pegas (*spring/memory effect*) adalah kombinasi *heat treatment* dan *reverse coiling*. Proses ini tidak bisa dilakukan sembarangan karena berisiko merusak jaket plastik di dalam kabel USB.
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="industrial-list text-gray-300 text-sm font-medium space-y-4">
+                            <li><strong class="text-white">Coiling Awal & Pemanasan:</strong> Kabel yang sudah di-sleeve digulung ketat pada batang besi/aluminium, dikunci, lalu dipanaskan dengan *heat gun* secara merata untuk membentuk struktur plastik PET di dalamnya.</li>
+                            <li><strong class="text-white">Pendinginan:</strong> Dibiarkan mendingin hingga suhu ruang untuk mengunci bentuk memori polimer.</li>
+                            <li><strong class="text-white">Reverse Coiling:</strong> Gulungan yang sudah jadi diputar balik arah gulungannya (*reversed*). Proses memutar balik ini menempatkan material dalam keadaan tegang (*tension*), menghasilkan efek pegas yang luar biasa rapat dan tidak mudah melar.</li>
+                            <li><strong class="text-white">Pemanasan Tahap 2:</strong> Pemanasan akhir untuk mematenkan bentuk *reverse coil* secara permanen.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-white pt-12 pb-8 border-t-8 border-primary mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono font-bold text-sm text-gray-500">
+            <p>SYSTEM_VERSION: 2026.04 // &copy; JEVANDRY // ALL_RIGHTS_RESERVED</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn'); 
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('active'); 
+            }); 
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealOnScroll.observe(el));
+    </script>
+</body>
+</html>
