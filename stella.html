@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.T.E.L.L.A - Project Details | Jevandry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'], 
+                        heading: ['Poppins', 'sans-serif'], 
+                        mono: ['Fira Code', 'monospace'] 
+                    },
+                    colors: { 
+                        primary: '#FF6600', 
+                        primaryHover: '#CC5200', 
+                        dark: '#121212', 
+                        darker: '#000000', 
+                        light: '#FFFFFF', 
+                        surface: '#F4F4F5' 
+                    },
+                    boxShadow: {
+                        'industrial': '6px 6px 0px 0px #121212',
+                        'industrial-primary': '6px 6px 0px 0px #FF6600',
+                        'industrial-sm': '3px 3px 0px 0px #121212'
+                    }
+                }
+            }
+        }
+    </script>
+    <style> 
+        .stripes-asiimov { background: repeating-linear-gradient(-45deg, #121212, #121212 10px, #FF6600 10px, #FF6600 20px); }
+        .stripes-light { background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 10px, #f4f4f5 10px, #f4f4f5 20px); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); } 
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .industrial-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
+        .industrial-list li::before { content: '>'; position: absolute; left: 0; color: #FF6600; font-family: 'Fira Code', monospace; font-weight: bold; }
+    </style>
+</head>
+<body class="font-sans text-dark bg-surface antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 bg-white border-b-4 border-dark transition-all duration-300 top-0 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="logo.png" alt="Logo" class="h-12 w-auto object-contain">
+                    <a href="index.html" class="font-heading text-2xl font-extrabold text-dark tracking-tighter uppercase hover:text-primary transition">
+                        JEVANDRY<span class="text-primary">.</span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex space-x-8 font-mono text-sm font-bold">
+                    <a href="index.html" class="text-dark hover:text-primary transition-colors px-3 py-1">HOME</a>
+                    <a href="projects.html" class="text-white bg-dark px-3 py-1 border-2 border-dark shadow-industrial-primary transition-colors">PROJECTS</a>
+                    <a href="experience.html" class="text-dark hover:text-primary transition-colors px-3 py-1">EXPERIENCE</a>
+                    <a href="credentials.html" class="text-dark hover:text-primary transition-colors px-3 py-1">CREDENTIALS</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-dark hover:text-primary p-2 border-2 border-dark bg-surface"><i class="fas fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t-2 border-dark absolute w-full h-screen pb-32">
+            <div class="px-4 pt-2 pb-6 space-y-2 font-mono font-bold">
+                <a href="index.html" class="block px-3 py-3 text-dark border-b-2 border-surface">HOME</a>
+                <a href="projects.html" class="block px-3 py-3 bg-dark text-primary border-2 border-dark">PROJECTS</a>
+                <a href="experience.html" class="block px-3 py-3 text-dark border-b-2 border-surface">EXPERIENCE</a>
+                <a href="credentials.html" class="block px-3 py-3 text-dark border-b-2 border-surface">CREDENTIALS</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
+        <div class="absolute top-0 right-0 w-[400px] h-[1000px] stripes-light -z-10 transform translate-x-1/3 -skew-x-12 opacity-50"></div>
+
+        <div class="mb-8">
+            <a href="projects.html" class="inline-flex items-center font-mono font-bold text-sm text-gray-600 hover:text-primary transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> RETURN_TO_DIRECTORY
+            </a>
+        </div>
+
+        <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 border-b-4 border-dark pb-16">
+            <div>
+                <div class="inline-flex items-center gap-2 mb-4 bg-dark text-white px-3 py-1 font-mono text-xs font-bold uppercase border-2 border-dark">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span> STATUS: IN_DEVELOPMENT (R&D)
+                </div>
+                <h1 class="font-heading text-5xl md:text-6xl font-extrabold text-dark tracking-tight uppercase leading-none mb-4">
+                    S.T.E.L.L.A
+                </h1>
+                <h2 class="font-mono text-xl font-bold text-gray-600 mb-6">System That Explain Literally Like AI</h2>
+                <p class="text-lg text-gray-700 mb-8 font-medium leading-relaxed">
+                    Pengembangan <i>voice assistant</i> fisik cerdas yang mengintegrasikan pemrosesan bahasa alami mutakhir dengan rekayasa perangkat keras. S.T.E.L.L.A bukan sekadar chatbot, melainkan entitas asisten pintar dengan <i>persona</i> yang mampu berinteraksi secara vokal dengan intonasi selayaknya manusia.
+                </p>
+                <div class="flex flex-wrap gap-3 font-mono text-xs font-bold text-dark">
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">GEMINI API</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">ELEVENLABS API</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">PYTHON</span>
+                    <span class="px-3 py-1 border-2 border-dark bg-white shadow-industrial-sm">HARDWARE DEV</span>
+                </div>
+            </div>
+            <div class="bg-white border-4 border-dark p-2 shadow-industrial relative">
+                <div class="absolute -bottom-4 -right-4 w-24 h-24 stripes-asiimov border-4 border-dark -z-10"></div>
+                <div class="bg-gray-100 flex items-center justify-center p-8 border-2 border-dark">
+                    <img src="logo-stella.png" alt="S.T.E.L.L.A Logo" class="w-full max-w-sm h-auto object-contain hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal mb-20">
+            <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 01. SYSTEM_ARCHITECTURE</h3>
+            <h4 class="font-heading text-3xl font-extrabold text-dark uppercase mb-8">Pipeline Komputasi Kognitif</h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+                <div class="hidden md:block absolute top-1/2 left-1/6 right-1/6 h-2 bg-dark -z-10 transform -translate-y-1/2"></div>
+                
+                <div class="bg-surface border-4 border-dark p-6 shadow-industrial-sm relative flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-dark text-white flex items-center justify-center font-bold font-mono mb-4 border-2 border-primary z-10">1</div>
+                    <i class="fas fa-microphone-alt text-4xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">Input & STT</h5>
+                    <p class="text-sm text-gray-700">Menangkap sinyal suara analog pengguna melalui modul mikrofon terintegrasi, kemudian mengonversinya menjadi teks digital menggunakan engine <i>Speech-to-Text</i> dengan latensi rendah.</p>
+                </div>
+
+                <div class="bg-white border-4 border-dark p-6 shadow-industrial relative flex flex-col items-center text-center transform md:-translate-y-4">
+                    <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold font-mono mb-4 border-2 border-dark z-10">2</div>
+                    <i class="fas fa-brain text-4xl text-dark mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">Gemini API (The Brain)</h5>
+                    <p class="text-sm text-gray-700">Teks masukan dikirim ke <b>Gemini API</b>. Prompt dirancang khusus dengan <i>system instructions</i> agar S.T.E.L.L.A memiliki persona teknis, cerdas, dan merespons secara ringkas dan relevan layaknya asisten lab.</p>
+                </div>
+
+                <div class="bg-surface border-4 border-dark p-6 shadow-industrial-sm relative flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-dark text-white flex items-center justify-center font-bold font-mono mb-4 border-2 border-primary z-10">3</div>
+                    <i class="fas fa-volume-up text-4xl text-primary mb-4"></i>
+                    <h5 class="font-heading font-extrabold text-lg uppercase mb-2">ElevenLabs (TTS)</h5>
+                    <p class="text-sm text-gray-700">Teks balasan dari Gemini diproses oleh <b>ElevenLabs API</b>. Sintesis suara (*Text-to-Speech*) ini menggunakan model suara premium untuk menghasilkan intonasi dan emosi yang sangat natural melalui speaker.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal mb-20 bg-dark text-white border-b-8 border-primary p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-64 h-64 stripes-asiimov opacity-20 transform scale-x-[-1]"></div>
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="font-mono text-sm font-bold text-primary tracking-widest uppercase mb-2">// 02. PHYSICAL_FORM</h3>
+                    <h4 class="font-heading text-3xl font-extrabold uppercase mb-6">Integrasi Ekosistem Hardware</h4>
+                    <p class="text-gray-300 font-medium mb-6">
+                        S.T.E.L.L.A bukan sekadar skrip Python di layar monitor, melainkan wujud fisik yang membumi. Sebagai <i>hardware maker</i>, saya merancang perangkat ini agar dapat berinteraksi langsung di meja kerja.
+                    </p>
+                    <ul class="industrial-list text-gray-300 text-sm font-medium space-y-3">
+                        <li><strong class="text-white">Custom 3D Printed Chassis:</strong> Casing didesain via CAD dan dicetak 3D secara mandiri dengan mempertimbangkan akustik ruang speaker dan ventilasi udara mikroprosesor.</li>
+                        <li><strong class="text-white">SBC / Microcontroller Brain:</strong> Menggunakan komputasi <i>embedded system</i> untuk memproses script I/O, merekam audio, dan menjembatani panggilan API secara <i>real-time</i> via koneksi Wi-Fi.</li>
+                        <li><strong class="text-white">Visual Feedback:</strong> Integrasi lampu indikator LED cerdas (contoh: Neopixel) yang bereaksi sesuai *state* sistem (Mendengarkan, Memproses, Berbicara).</li>
+                    </ul>
+                </div>
+                <div class="bg-darker border-4 border-gray-700 p-6 shadow-industrial-sm flex items-center justify-center font-mono text-center text-gray-500">
+                    <div>
+                        <i class="fas fa-cogs text-6xl mb-4 text-gray-600"></i>
+                        <p class="font-bold uppercase tracking-widest text-sm">HARDWARE_PROTOTYPE_DATA</p>
+                        <p class="text-xs mt-2">[RENDERS / SCHEMATICS PENDING DEPLOYMENT]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-white pt-12 pb-8 border-t-8 border-primary mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono font-bold text-sm text-gray-500">
+            <p>SYSTEM_VERSION: 2026.04 // &copy; JEVANDRY // ALL_RIGHTS_RESERVED</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn'); 
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('active'); 
+            }); 
+        }, { threshold: 0.1 });
+        reveals.forEach(el => revealOnScroll.observe(el));
+    </script>
+</body>
+</html>
